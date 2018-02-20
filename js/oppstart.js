@@ -1,5 +1,5 @@
 //Globale variabler:
-var antall = [0, 0]; //Antall angripere og forsvarere som array (angripere er nr. 0 og forsvar nr. 1)
+var antall = [1, 0]; //Antall angripere og forsvarere som array (angripere er nr. 0 og forsvar nr. 1)
 var terninger = [3, 2];
 
 var d = ['ikke_i_bruk']; //Dette er en array med filadressene til terningbildene

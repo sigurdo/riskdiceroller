@@ -16,7 +16,7 @@ function oppdaterTerningvelger(type) {//Oppdatere, dvs. sjekke om det er mange n
 		for (var i = 3; i >= 1; i--) {
 			//console.log(i);
 			//document.getElementById('antallTerninger01').style.display = 'none';
-			if (antall[0] >= i) {
+			if (antall[0] - 1 >= i) {
 				document.getElementById('antallTerninger0').innerHTML += "<option value='"+i+"' id='antallTerninger0"+i+"'> "+i+" Terning"+endelse[i]+" </option>";
 			}	
 		}
@@ -29,7 +29,7 @@ function oppdaterTerningvelger(type) {//Oppdatere, dvs. sjekke om det er mange n
 			//console.log(i);
 			//document.getElementById('antallTerninger01').style.display = 'none';
 			if (antall[1] >= i) {
-				document.getElementById('antallTerninger1').innerHTML += "<option value="+i+" id='antallTerninger1"+i+"'> "+i+" Terning"+endelse[i]+" </option>";
+				document.getElementById('antallTerninger1').innerHTML += "<option value='"+i+"' id='antallTerninger1"+i+"'> "+i+" Terning"+endelse[i]+" </option>";
 			}
 		}
 	}
@@ -42,9 +42,10 @@ function tomVarslinger() {
 function juster(type, ant) {//funksjonen juster justerer opp og ned antallet angripere og forsvarere type=0 er angripere og type=1 er forsvarere
 	var antallFor = [];
 	antallFor[type] = antall[type];
-	if(antall[type] + ant >= 0) {//Denne ifen passer på at man ikke får negativt antall soldater, ettersom dette kan være litt irriterende
+	var minimum = 0;
+	if (type == 0) {minimum = 1;}
+	if(antall[type] + ant >= minimum) {//Denne ifen passer på at man ikke får negativt antall soldater, ettersom dette kan være litt irriterende
 		antall[type] += ant;
-		//console.log(antall);
 	}
 	else {antall[type] = 0;}//Denne elsen gjør at -10-knappen kan sette tall under 10 til å bli null
 	visAntall();
@@ -55,13 +56,28 @@ function juster(type, ant) {//funksjonen juster justerer opp og ned antallet ang
 	if (antall[type] > antallFor[type] || antallTerninger > antall[type]) {//Tanken her er at i slag skal man ikke trenge velge terninger på nytt, men den skal likevel prøve å velge maks antall når man plotter inn nye soldater. Derfor sjekker ifen om man soldatmengden har økt eller sunket
 		oppdaterTerningvelger(type);
 	}
+	console.log('kjjhj');
 
 	//sporBlitz();
 }
 
+function angripereInput() {
+	//Det er vanskelig å forklare hvorfor, men det er viktig at alle endringer av soldattall går gjennom juster(), det har blant annet med terningvelgeren å gjøre
+	var antFor = antall[0];
+	var antEtter = Number(document.getElementById('visAngripere').value);
+	juster(0, antEtter - antFor);
+}
+
+function forsvarereInput() {
+	//Det er vanskelig å forklare hvorfor, men det er viktig at alle endringer av soldattall går gjennom juster(), det har blant annet med terningvelgeren å gjøre
+	var antFor = antall[1];
+	var antEtter = Number(document.getElementById('visForsvarere').value);
+	juster(1, antEtter - antFor);
+}
+
 function visAntall() {
-	document.getElementById('visAngripere').innerHTML = antall[0] + 1;
-	document.getElementById('visForsvarere').innerHTML = antall[1];
+	document.getElementById('visAngripere').value = antall[0];
+	document.getElementById('visForsvarere').value = antall[1];
 }
 
 function terning() {
@@ -343,7 +359,7 @@ function stopp() {
 }
 
 function angrip() {
-	if(antall[0]>0 && antall[1]>0) {
+	if(antall[0] > 1 && antall[1] > 0) {
 		tomVarslinger();
 		var antAfor = antall[0];
 		var antFfor = antall[1];
