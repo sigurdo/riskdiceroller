@@ -383,6 +383,7 @@ function angripBlitz(minAngripere, ventetid) {
 	//var minAngripere = Number(minAngripereString);
 	//console.log(minAngripereString);
 
+	bakgrunnsmusikkEl.setAttribute('loop', '');
 	bakgrunnsmusikkEl.currentTime = 38.3;
 	bakgrunnsmusikkEl.play();
 
@@ -402,13 +403,14 @@ function angripBlitz(minAngripere, ventetid) {
 		document.getElementById('sisteF').style.backgroundColor = farge(diffF / (diffA+diffF));
 		blitzing = true;
 		stoppEl.style.display = 'none';
+
 		if (bakgrunnsmusikkEl.currentTime < 104.5) {
 			bakgrunnsmusikkEl.currentTime = 104.5;
 		}
 		setTimeout(function () {
-			if (bakgrunnsmusikkEl.currentTime >= 110) {//Denne ifen er for å unngå å stoppe hvis sangen allerede har starta på nytt (f. eks. hvis man blitzer igjen)
-				bakgrunnsmusikkEl.load();
-			}
+			//if (bakgrunnsmusikkEl.currentTime >= 110) {//Denne ifen er for å unngå å stoppe hvis sangen allerede har starta på nytt (f. eks. hvis man blitzer igjen)
+				bakgrunnsmusikkEl.removeAttribute('loop');
+			//}
 		}, 6500);
 	}
 
