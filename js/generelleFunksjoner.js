@@ -383,7 +383,6 @@ function angripBlitz(minAngripere, ventetid) {
 	//var minAngripere = Number(minAngripereString);
 	//console.log(minAngripereString);
 
-	var bakgrunnsmusikkEl = document.querySelector('#bakgrunnsmusikk');
 	bakgrunnsmusikkEl.currentTime = 38.3;
 	bakgrunnsmusikkEl.play();
 
@@ -408,7 +407,7 @@ function angripBlitz(minAngripere, ventetid) {
 		}
 		setTimeout(function () {
 			if (bakgrunnsmusikkEl.currentTime >= 110) {//Denne ifen er for å unngå å stoppe hvis sangen allerede har starta på nytt (f. eks. hvis man blitzer igjen)
-				bakgrunnsmusikkEl.pause();
+				bakgrunnsmusikkEl.load();
 			}
 		}, 6500);
 	}
