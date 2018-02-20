@@ -157,134 +157,40 @@ html, body {
 	font-size: 500%;
 }
 
-/*For desktop:*/
-@media only screen and (min-width: 768px) {
-	.forgrunn {
-		/*position: absolute;*/
-		top: 0%;
-		width: 980px;
-	}
-
-	#angrepBakgrunn {
-		background-color: red;
-	}
-
-	#forsvarBakgrunn {
-		background-color: blue;
-	}
-
-	#angrepDiv, #forsvarDiv, #angrepBakgrunn, #forsvarBakgrunn {
-		height: 100%;
-	}
-
+/*For desktop:* /
+@media only screen and (min-width: 981px) {
 	.justerAntall div {
 		font-size: 200%;
-		text-align: center;
-		margin: 10px;
-		padding: 10px;
-		background-color: #048a77;
-		cursor: pointer;
 	}
 
 	#visAngripere, #visForsvarere {
 		font-size: 500%;
-		margin: 20px;
 	}
 
 	.velgTerninger select {
 		font-size: 44px;
-		width: 100%;
-		padding: 15px;
-	}
-
-	.velgTerninger option {
-		font-size: 15px;
 	}
 
 	.siste {
-		margin: 25px;
-		/*height: 200px;*/
-		/*background-color: #4ae873;*/
-		background-color: gold;
-		color: white;
 		font-size: 1000%;
-		font-weight: bold;
-		text-align: center;
-	}
-
-	.visTerninger img {
-		width: 25%;
-		margin: 10px;
-		background-color: white;
-		border-radius: 17px;
-	}
-
-	#stoppRamme {
-		position: absolute;
-		bottom: 50px;
-		width: 100%;
 	}
 
 	#stopp {
-		border-radius: 50px;
-		background-color: #ff3232;
-		cursor: pointer;
-
 		font-size: 660%;
-		color: white;
-		text-align: center;
-		padding: 50px;
-	}
-
-	#angripRamme {
-		position: absolute;
-		bottom: 120px;
-		width: 100%;
 	}
 
 	#angrip {
-		/** /border: 5px solid #790820;/**/
-		border-radius: 25px;
-		background-color: #00b000;
-		cursor: pointer;
-
 		font-size: 400%;
-		color: white;
-		text-align: center;
-		padding: 25px;
-	}
-
-	#angripBlitzRamme {
-		position: absolute;
-		bottom: 0px;
-		width: 100%;
 	}
 
 	#angripBlitz {
-		
-
-		
-		/** /border: 5px solid #790820;/**/
-		border-radius: 15px;
-		background-color: #ff5722;
-		cursor: pointer;
-
 		font-size: 300%;
-		color: white;
-		text-align: center;
-		padding: 25px 50px 25px 50px;
 	}
 
 	#varslinger {
-		position: absolute;
-		bottom: 0px;
-		width: 80%;
-		left: 10%;
-		background-color: grey;
-		opacity: 0.5;
 		font-size: 400%;
 	}
-}
+}/**/
 
 
 h1 {
