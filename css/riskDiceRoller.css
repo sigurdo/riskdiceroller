@@ -1,7 +1,7 @@
 html, body {
 	margin: 0px;
 	height: 100%;/*Tillater høydeflexing*/
-	background-image: url("https://i.imgur.com/oWg1SlN.jpg");
+	background-image: url("../media/bakgrunn.jpg");/*evt: https://i.imgur.com/oWg1SlN.jpg*/
 	background-size: 100%;
 	background-position: bottom;
 	background-repeat: no-repeat;
