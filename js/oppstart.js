@@ -7,6 +7,8 @@ var blitzing = true;
 //HTML-elementer:
 var bodyEl = document.querySelector('body');
 var stoppEl = document.querySelector('#stopp');
+var angripEl = document.querySelector('#angrip');
+var blitzEl = document.querySelector('#blitz');
 var bakgrunnsmusikkEl = document.querySelector('#bakgrunnsmusikk');
 
 //Funksjonskall:

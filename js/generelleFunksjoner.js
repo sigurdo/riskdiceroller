@@ -194,7 +194,6 @@ function sporBlitz() {
 		var ventetid = Number(document.querySelector('#ventetid').value);
 		//var ventetid = document.querySelector('#ventetidId').value;
 		bodyEl.removeChild(sporBlitzEl);
-		stoppEl.style.display = 'block';
 		angripBlitz(minAngripere, ventetid);
 	});
 	sporBlitzEl.appendChild(blitzKnapp);
@@ -387,6 +386,10 @@ function angripBlitz(minAngripere, ventetid) {
 	bakgrunnsmusikkEl.currentTime = 38.3;
 	bakgrunnsmusikkEl.play();
 
+	stoppEl.style.display = 'block';
+	angripEl.style.display = 'none';
+	blitzEl.style.display = 'none';
+
 	var antAforst = antall[0];
 	var antFforst = antall[1];
 
@@ -402,16 +405,16 @@ function angripBlitz(minAngripere, ventetid) {
 		//console.log(diffA / (diffA+diffF), farge(diffA / (diffA+diffF)));
 		document.getElementById('sisteF').style.backgroundColor = farge(diffF / (diffA+diffF));
 		blitzing = true;
+
 		stoppEl.style.display = 'none';
+		angripEl.style.display = 'block';
+		blitzEl.style.display = 'block';
 
 		if (bakgrunnsmusikkEl.currentTime < 104.5) {
 			bakgrunnsmusikkEl.currentTime = 104.5;
 		}
-		setTimeout(function () {
-			//if (bakgrunnsmusikkEl.currentTime >= 110) {//Denne ifen er for å unngå å stoppe hvis sangen allerede har starta på nytt (f. eks. hvis man blitzer igjen)
-				bakgrunnsmusikkEl.removeAttribute('loop');
-			//}
-		}, 6500);
+
+		bakgrunnsmusikkEl.removeAttribute('loop');
 	}
 
 	function runde() {
