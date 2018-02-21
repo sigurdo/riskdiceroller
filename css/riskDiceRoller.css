@@ -54,7 +54,7 @@ html, body {
 	font-family: calibri;
 	text-align: center;
 	margin: 10px;
-	padding: 15px 25px 15px 25px;
+	padding: 20px 35px 20px 35px;
 	border-radius: 4px;
 	background-color: #048a77;
 	cursor: pointer;
@@ -120,6 +120,8 @@ input::-webkit-inner-spin-button {*/
 	cursor: pointer;
 
 	font-size: 800%;
+	font-weight: bold;
+	font-family: calibri;
 	color: white;
 	text-align: center;
 	padding: 40px;
@@ -138,6 +140,8 @@ input::-webkit-inner-spin-button {*/
 	cursor: pointer;
 
 	font-size: 600%;
+	font-weight: bold;
+	font-family: calibri;
 	color: white;
 	text-align: center;
 	padding: 25px;
@@ -156,6 +160,8 @@ input::-webkit-inner-spin-button {*/
 	cursor: pointer;
 
 	font-size: 300%;
+	font-weight: bold;
+	font-family: calibri;
 	color: white;
 	text-align: center;
 	padding: 25px 50px 25px 50px;

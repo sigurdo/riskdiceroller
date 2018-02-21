@@ -76,10 +76,25 @@ function forsvarereInput() {
 }
 
 function visAntall() {
-	visEl[0].value = antall[0];
-	if (visEl[0].value > 99) {visEl[0].style.width = '210px';}
-	visEl[1].value = antall[1];
-	if (visEl[1].value > 99) {visEl[1].style.width = '210px';}
+	var divId = ['angrepDiv', 'forsvarDiv'];
+
+	for (var i = 0; i < visEl.length; i++) {
+		visEl[i].value = antall[i];
+		if (visEl[i].value > 99) {
+			visEl[i].style.width = '220px';
+		} else {
+			visEl[i].style.width = '165px';
+		}
+
+		var divEl = document.querySelectorAll('#'+divId[i]+' .justerAntall div');
+		for (var j = 0; j < divEl.length; j++) {
+			if (visEl[i].value > 99) {
+				divEl[j].style.padding = '10px 20px 10px 20px';
+			} else {
+				divEl[j].style.padding = '20px 35px 20px 35px';
+			}
+		}
+	}
 }
 
 function terning() {
