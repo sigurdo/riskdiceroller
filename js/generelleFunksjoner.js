@@ -56,7 +56,7 @@ function juster(type, ant) {//funksjonen juster justerer opp og ned antallet ang
 	if (antall[type] > antallFor[type] || antallTerninger > antall[type]) {//Tanken her er at i slag skal man ikke trenge velge terninger på nytt, men den skal likevel prøve å velge maks antall når man plotter inn nye soldater. Derfor sjekker ifen om man soldatmengden har økt eller sunket
 		oppdaterTerningvelger(type);
 	}
-	console.log('kjjhj');
+	//console.log('justerer');
 
 	//sporBlitz();
 }
@@ -64,20 +64,22 @@ function juster(type, ant) {//funksjonen juster justerer opp og ned antallet ang
 function angripereInput() {
 	//Det er vanskelig å forklare hvorfor, men det er viktig at alle endringer av soldattall går gjennom juster(), det har blant annet med terningvelgeren å gjøre
 	var antFor = antall[0];
-	var antEtter = Number(document.getElementById('visAngripere').value);
+	var antEtter = Number(visEl[0].value);
 	juster(0, antEtter - antFor);
 }
 
 function forsvarereInput() {
 	//Det er vanskelig å forklare hvorfor, men det er viktig at alle endringer av soldattall går gjennom juster(), det har blant annet med terningvelgeren å gjøre
 	var antFor = antall[1];
-	var antEtter = Number(document.getElementById('visForsvarere').value);
+	var antEtter = Number(visEl[1].value);
 	juster(1, antEtter - antFor);
 }
 
 function visAntall() {
-	document.getElementById('visAngripere').value = antall[0];
-	document.getElementById('visForsvarere').value = antall[1];
+	visEl[0].value = antall[0];
+	if (visEl[0].value > 99) {visEl[0].style.width = '210px';}
+	visEl[1].value = antall[1];
+	if (visEl[1].value > 99) {visEl[1].style.width = '210px';}
 }
 
 function terning() {
@@ -107,10 +109,21 @@ function fargeGammel2(n) {
 }
 
 function farge(dode) {//Dode er hvor mange som døde for den siden i siste slag (husk at det er -diff)
+	//console.log('mekker farge');
 	var r = 255 - (0 * dode).toFixed(0);
 	var g = 220 - (220 * dode).toFixed(0);
 	var b = 0 .toFixed(0);
 	return "rgb("+r+", "+g+", "+b+")";
+}
+
+function skrivTilSiste(diff) {//diff må være array
+	for (var i = 0; i < diff.length; i++) {
+		sisteEl[i].innerHTML = diff[i];
+		sisteEl[i].style.backgroundColor = farge(diff[i] / (diff[0]+diff[1]));
+		sisteEl[i].style.fontSize = '1500%';
+		if (sisteEl[i].innerHTML.length > 3) {sisteEl[i].style.fontSize = '1250%';}
+		if (sisteEl[i].innerHTML.length > 4) {sisteEl[i].style.fontSize = '1000%';}
+	}
 }
 
 function sporBlitz() {
@@ -136,9 +149,6 @@ function sporBlitz() {
 		var alternativEl = document.createElement('option');
 		alternativEl.value = i;
 		alternativEl.innerHTML = i + 1;
-		alternativEl.style.width = '400px';
-		alternativEl.style.height = '250px';
-		alternativEl.style.textAlign = 'center';
 		minAngripereEl.appendChild(alternativEl);
 	}
 	sporBlitzEl.appendChild(minAngripereEl);
@@ -160,8 +170,6 @@ function sporBlitz() {
 
 	for (var i = 0; i < ventetidAlternativer.length; i++) {
 		var alternativEl = document.createElement('option');
-		alternativEl.style.width = '750px';
-		alternativEl.style.height = '250px';
 		alternativEl.innerHTML = ventetidAlternativer[i].navn;
 		alternativEl.value = ventetidAlternativer[i].ms;
 		//console.log(Number(alternativEl.value));
@@ -359,6 +367,7 @@ function stopp() {
 }
 
 function angrip() {
+	//console.log('angrip');
 	if(antall[0] > 1 && antall[1] > 0) {
 		tomVarslinger();
 		var antAfor = antall[0];
@@ -382,18 +391,14 @@ function angrip() {
 
 		//else {document.getElementById('varslinger').innerHTML = 'Ta resten manuelt';}
 
-		var diffA = antall[0] - antAfor;
-		var diffF = antall[1] - antFfor;
-
-		document.getElementById('sisteA').innerHTML = diffA;
-		document.getElementById('sisteF').innerHTML = diffF;
-		document.getElementById('sisteA').style.backgroundColor = farge(diffA / (diffA+diffF));
-		document.getElementById('sisteF').style.backgroundColor = farge(diffF / (diffA+diffF));
+		var diff = [antall[0] - antAfor, antall[1] - antFfor];
+		skrivTilSiste(diff);
 	}
 	else {document.getElementById('varslinger').innerHTML = 'Det er ikke nok folk';}
 }
 
 function angripBlitz(minAngripere, ventetid) {
+	//console.log('blitzer');
 	//var minAngripereString = prompt("Minimum angripere igjen:", 1);
 	//var minAngripere = Number(minAngripereString);
 	//console.log(minAngripereString);
@@ -406,20 +411,12 @@ function angripBlitz(minAngripere, ventetid) {
 	angripEl.style.display = 'none';
 	blitzEl.style.display = 'none';
 
-	var antAforst = antall[0];
-	var antFforst = antall[1];
+	var antForst = [antall[0], antall[1]];
 
 	function ferdig() {
-		//console.log(antAforst, antall[0]);
-
-		var diffA = antall[0] - antAforst;
-		var diffF = antall[1] - antFforst;
-
-		document.getElementById('sisteA').innerHTML = diffA;
-		document.getElementById('sisteF').innerHTML = diffF;
-		document.getElementById('sisteA').style.backgroundColor = farge(diffA / (diffA+diffF));
-		//console.log(diffA / (diffA+diffF), farge(diffA / (diffA+diffF)));
-		document.getElementById('sisteF').style.backgroundColor = farge(diffF / (diffA+diffF));
+		var diff = [antall[0] - antForst[0], antall[1] - antForst[1]];
+		skrivTilSiste(diff);
+		
 		blitzing = true;
 
 		stoppEl.style.display = 'none';

@@ -11,6 +11,8 @@ var blitzing = true;
 
 //HTML-elementer:
 var bodyEl = document.querySelector('body');
+var visEl = [document.getElementById('visAngripere'), document.getElementById('visForsvarere')];
+var sisteEl = [document.getElementById('sisteA'), document.getElementById('sisteF')];
 var stoppEl = document.querySelector('#stopp');
 var angripEl = document.querySelector('#angrip');
 var blitzEl = document.querySelector('#blitz');
