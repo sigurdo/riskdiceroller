@@ -53,9 +53,17 @@ function juster(type, ant) {//funksjonen juster justerer opp og ned antallet ang
 	var antallTerninger = Number(document.querySelector('#antallTerninger'+type).value);
 	//console.log(antallTerninger);
 
-	if (antall[type] > antallFor[type] || antallTerninger > antall[type]) {//Tanken her er at i slag skal man ikke trenge velge terninger på nytt, men den skal likevel prøve å velge maks antall når man plotter inn nye soldater. Derfor sjekker ifen om man soldatmengden har økt eller sunket
+	if (antall[type] > antallFor[type]) {//Tanken her er at i slag skal man ikke trenge velge terninger på nytt, men den skal likevel prøve å velge maks antall når man plotter inn nye soldater. Derfor sjekker ifen om man soldatmengden har økt eller sunket
 		oppdaterTerningvelger(type);
 	}
+
+	if (type == 0 && antallTerninger > antall[type] - 1) {
+		oppdaterTerningvelger(type);
+	}
+	if (type == 1 && antallTerninger > antall[type]) {
+		oppdaterTerningvelger(type);
+	}
+
 	//console.log('justerer');
 
 	//sporBlitz();
