@@ -80,17 +80,21 @@ function visAntall() {
 
 	for (var i = 0; i < visEl.length; i++) {
 		visEl[i].value = antall[i];
-		if (visEl[i].value > 99) {
-			visEl[i].style.width = '220px';
-		} else {
-			visEl[i].style.width = '165px';
-		}
 
 		var divEl = document.querySelectorAll('#'+divId[i]+' .justerAntall div');
 		for (var j = 0; j < divEl.length; j++) {
 			if (visEl[i].value > 99) {
-				divEl[j].style.padding = '10px 20px 10px 20px';
+				if (visEl[i].value > 999) {
+					visEl[i].style.width = '100%';
+					divEl[j].style.display = 'none';
+				} else {
+					visEl[i].style.width = '220px';
+					divEl[j].style.display = 'block';
+					divEl[j].style.padding = '10px 20px 10px 20px';
+				}
 			} else {
+				visEl[i].style.width = '165px';
+				divEl[j].style.display = 'block';
 				divEl[j].style.padding = '20px 35px 20px 35px';
 			}
 		}
@@ -135,8 +139,7 @@ function skrivTilSiste(diff) {//diff må være array
 	for (var i = 0; i < diff.length; i++) {
 		sisteEl[i].innerHTML = diff[i];
 		sisteEl[i].style.backgroundColor = farge(diff[i] / (diff[0]+diff[1]));
-		sisteEl[i].style.fontSize = '1500%';
-		if (sisteEl[i].innerHTML.length > 3) {sisteEl[i].style.fontSize = '1250%';}
+		sisteEl[i].style.fontSize = '1250%';
 		if (sisteEl[i].innerHTML.length > 4) {sisteEl[i].style.fontSize = '1000%';}
 	}
 }
