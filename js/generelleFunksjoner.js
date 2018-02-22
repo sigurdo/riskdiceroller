@@ -147,6 +147,7 @@ function skrivTilSiste(diff) {//diff må være array
 function sporBlitz() {
 	var sporBlitzEl = document.createElement('div');
 	bodyEl.appendChild(sporBlitzEl);
+	sporBlitzOppe = true;
 	sporBlitzEl.id = 'sporBlitz';
 	sporBlitzEl.style.position = 'fixed';
 	sporBlitzEl.style.top = '0px';
@@ -218,6 +219,7 @@ function sporBlitz() {
 	avbrytKnapp.innerHTML = 'Avbryt';
 	avbrytKnapp.addEventListener('click', function () {
 		bodyEl.removeChild(sporBlitzEl);
+		sporBlitzOppe = false;
 	});
 	sporBlitzEl.appendChild(avbrytKnapp);
 
@@ -236,10 +238,10 @@ function sporBlitz() {
 		var ventetid = Number(document.querySelector('#ventetid').value);
 		//var ventetid = document.querySelector('#ventetidId').value;
 		bodyEl.removeChild(sporBlitzEl);
+		sporBlitzOppe = false;
 		angripBlitz(minAngripere, ventetid);
 	});
 	sporBlitzEl.appendChild(blitzKnapp);
-
 }
 
 function angrip32() {
@@ -458,4 +460,37 @@ function angripBlitz(minAngripere, ventetid) {
 	}
 
 	runde();
+}
+
+function knappNed(e) {
+	//console.log(e.keyCode);
+	var k = e.keyCode;
+	var b = String.fromCharCode(k);
+	if (k == 13 && !sporBlitzOppe) {angrip();}
+	if (k == 13 && sporBlitzOppe) {
+		var sporBlitzEl = document.querySelector('#sporBlitz');
+		var minAngripere = Number(document.querySelector('#minAngripere').value);
+		var ventetid = Number(document.querySelector('#ventetid').value);
+		//var ventetid = document.querySelector('#ventetidId').value;
+		bodyEl.removeChild(sporBlitzEl);
+		sporBlitzOppe = false;
+		angripBlitz(minAngripere, ventetid);
+	}
+	if (k == 8 && sporBlitzOppe) {
+		var sporBlitzEl = document.querySelector('#sporBlitz');
+		bodyEl.removeChild(sporBlitzEl);
+		sporBlitzOppe = false;
+	} else if (k == 8) {
+		stopp();
+	}
+	//if (k == 8) {stopp();}
+	if (k == 32) {sporBlitz();}
+	if (b == 'Q') {juster(0, -1);}
+	if (b == 'A') {juster(0, -5);}
+	if (b == 'E') {juster(0, +1);}
+	if (b == 'D') {juster(0, +5);}
+	if (b == 'U') {juster(1, -1);}
+	if (b == 'J') {juster(1, -5);}
+	if (b == 'O') {juster(1, +1);}
+	if (b == 'L') {juster(1, +5);}
 }
