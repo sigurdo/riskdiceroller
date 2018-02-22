@@ -172,10 +172,10 @@ function sporBlitz() {
 	minAngripereEl.style.height = '250px';
 	minAngripereEl.style.fontSize = '200px';
 
-	for (var i = 0; i <= antall[0]; i++) {
+	for (var i = 1; i <= antall[0]; i++) {
 		var alternativEl = document.createElement('option');
 		alternativEl.value = i;
-		alternativEl.innerHTML = i + 1;
+		alternativEl.innerHTML = i;
 		minAngripereEl.appendChild(alternativEl);
 	}
 	sporBlitzEl.appendChild(minAngripereEl);
@@ -187,30 +187,53 @@ function sporBlitz() {
 	ventetidEl.style.height = '250px';
 	ventetidEl.style.fontSize = '200px';
 
-	var ventetidAlternativer = [
+	var temp = localStorage.getItem('5QSGeP_valgVentetid');
+	if (temp == null) {
+		localStorage.setItem('5QSGeP_valgVentetid', JSON.stringify([
+			{navn: 'Ingen', ms: 0, def: false},
+			{navn: 'Kort', ms: 250, def: false},
+			{navn: 'Middels', ms: 500, def: false},
+			{navn: 'Lang', ms: 1000, def: true},
+			{navn: 'Episk', ms: 2000, def: false}
+		]));
+		var ventetidAlternativer = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
+	}
+	else {
+		var ventetidAlternativer = JSON.parse(temp);
+	}
+	//console.log(JSON.parse(localStorage.getItem('5QSGeP_valgVentetid')));
+
+	/*var ventetidAlternativer = [
 		{navn: 'Ingen', ms: 0},
 		{navn: 'Kort', ms: 250},
 		{navn: 'Middels', ms: 500},
 		{navn: 'Lang', ms: 1000},
 		{navn: 'Episk', ms: 2000}
-	];
+	];*/
 
 	for (var i = 0; i < ventetidAlternativer.length; i++) {
 		var alternativEl = document.createElement('option');
 		alternativEl.innerHTML = ventetidAlternativer[i].navn;
-		alternativEl.value = ventetidAlternativer[i].ms;
+		alternativEl.value = i;
+		if (ventetidAlternativer[i].def) {
+			var defNr = i;
+		}
 		//console.log(Number(alternativEl.value));
 		ventetidEl.appendChild(alternativEl);
 	}
 
-	//console.log(ventetidEl.value);
-	//ventetidEl.value = 500;
-
 	sporBlitzEl.appendChild(ventetidEl);
 
-	document.querySelector('#minAngripere').value = 2;
-	if (antall[0] < 2) {document.querySelector('#minAngripere').value = 0;}
-	document.querySelector('#ventetid').value = '1000';
+	var defMinAng = localStorage.getItem('5QSGeP_defMinAng');
+	console.log(defMinAng);
+	if (defMinAng == null) {
+		localStorage.setItem('5QSGeP_defMinAng', 3);
+		defMinAng = localStorage.getItem('5QSGeP_defMinAng');
+	}
+
+	document.querySelector('#minAngripere').value = defMinAng;
+	if (antall[0] < defMinAng) {document.querySelector('#minAngripere').value = antall[0];}
+	document.querySelector('#ventetid').value = defNr;
 
 	sporBlitzEl.appendChild(document.createElement('br'));
 	sporBlitzEl.appendChild(document.createElement('br'));
@@ -243,7 +266,7 @@ function sporBlitz() {
 	blitzKnapp.innerHTML = 'Blitz';
 	blitzKnapp.addEventListener('click', function () {
 		var minAngripere = Number(document.querySelector('#minAngripere').value);
-		var ventetid = Number(document.querySelector('#ventetid').value);
+		var ventetid = ventetidAlternativer[Number(document.querySelector('#ventetid').value)].ms;
 		//var ventetid = document.querySelector('#ventetidId').value;
 		bodyEl.removeChild(sporBlitzEl);
 		sporBlitzOppe = false;
