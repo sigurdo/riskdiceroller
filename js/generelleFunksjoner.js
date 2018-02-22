@@ -445,7 +445,7 @@ function angrip() {
 		var diff = [antall[0] - antAfor, antall[1] - antFfor];
 		skrivTilSiste(diff);
 	}
-	else {document.getElementById('varslinger').innerHTML = 'Det er ikke nok folk';}
+	//else {document.getElementById('varslinger').innerHTML = 'Det er ikke nok folk';}
 }
 
 function angripBlitz(minAngripere, ventetid) {
