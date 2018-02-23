@@ -39,7 +39,11 @@ function tomVarslinger() {
 	document.getElementById('varslinger').innerHTML = '';
 }
 
-function juster(type, ant) {//funksjonen juster justerer opp og ned antallet angripere og forsvarere type=0 er angripere og type=1 er forsvarere
+function juster(type, ant, angrep) {//funksjonen juster justerer opp og ned antallet angripere og forsvarere type=0 er angripere og type=1 er forsvarere. var angrep er boolsk og informerer om angrep pågår eller ikke
+	//console.log('justerer');
+	if (!angrep) {
+		angrepPagar = false;
+	}
 	var antallFor = [];
 	antallFor[type] = antall[type];
 	var minimum = 0;
@@ -53,7 +57,7 @@ function juster(type, ant) {//funksjonen juster justerer opp og ned antallet ang
 	var antallTerninger = Number(document.querySelector('#antallTerninger'+type).value);
 	//console.log(antallTerninger);
 
-	if (antall[type] > antallFor[type]) {//Tanken her er at i slag skal man ikke trenge velge terninger på nytt, men den skal likevel prøve å velge maks antall når man plotter inn nye soldater. Derfor sjekker ifen om man soldatmengden har økt eller sunket
+	if (!angrep) {//Tanken her er at i slag skal man ikke trenge velge terninger på nytt, men den skal likevel prøve å velge maks antall når man plotter inn nye soldater. Derfor sjekker ifen om man soldatmengden har økt eller sunket
 		oppdaterTerningvelger(type);
 	}
 
@@ -63,24 +67,20 @@ function juster(type, ant) {//funksjonen juster justerer opp og ned antallet ang
 	if (type == 1 && antallTerninger > antall[type]) {
 		oppdaterTerningvelger(type);
 	}
-
-	//console.log('justerer');
-
-	//sporBlitz();
 }
 
 function angripereInput() {
 	//Det er vanskelig å forklare hvorfor, men det er viktig at alle endringer av soldattall går gjennom juster(), det har blant annet med terningvelgeren å gjøre
 	var antFor = antall[0];
 	var antEtter = Number(visEl[0].value);
-	juster(0, antEtter - antFor);
+	juster(0, antEtter - antFor, false);
 }
 
 function forsvarereInput() {
 	//Det er vanskelig å forklare hvorfor, men det er viktig at alle endringer av soldattall går gjennom juster(), det har blant annet med terningvelgeren å gjøre
 	var antFor = antall[1];
 	var antEtter = Number(visEl[1].value);
-	juster(1, antEtter - antFor);
+	juster(1, antEtter - antFor, false);
 }
 
 function visAntall() {
@@ -98,12 +98,14 @@ function visAntall() {
 				} else {
 					visEl[i].style.width = '220px';
 					divEl[j].style.display = 'block';
-					divEl[j].style.padding = '10px 20px 10px 20px';
+					//divEl[j].style.padding = '10px 20px 10px 20px';
+					divEl[j].style.fontSize = '300%';
 				}
 			} else {
 				visEl[i].style.width = '165px';
 				divEl[j].style.display = 'block';
-				divEl[j].style.padding = '20px 35px 20px 35px';
+				//divEl[j].style.padding = '20px 35px 20px 35px';
+				divEl[j].style.fontSize = '500%';
 			}
 		}
 	}
@@ -192,9 +194,9 @@ function sporBlitz() {
 		localStorage.setItem('5QSGeP_valgVentetid', JSON.stringify([
 			{navn: 'Ingen', ms: 0, def: false},
 			{navn: 'Kort', ms: 250, def: false},
-			{navn: 'Middels', ms: 500, def: false},
-			{navn: 'Lang', ms: 1000, def: true},
-			{navn: 'Episk', ms: 2000, def: false}
+			{navn: 'Middels', ms: 750, def: true},
+			{navn: 'Lang', ms: 1500, def: false},
+			{navn: 'Episk', ms: 3144, def: false}
 		]));
 		var ventetidAlternativer = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
 	}
@@ -225,7 +227,6 @@ function sporBlitz() {
 	sporBlitzEl.appendChild(ventetidEl);
 
 	var defMinAng = localStorage.getItem('5QSGeP_defMinAng');
-	console.log(defMinAng);
 	if (defMinAng == null) {
 		localStorage.setItem('5QSGeP_defMinAng', 3);
 		defMinAng = localStorage.getItem('5QSGeP_defMinAng');
@@ -307,8 +308,8 @@ function angrip32() {
 
 //Angriperne sammenliknes med forsvarerne
 
-	if(aH > fH) {juster(1, -1);} else {juster(0, -1);}
-	if(aL > fL) {juster(1, -1);} else {juster(0, -1);}
+	if(aH > fH) {juster(1, -1, true);} else {juster(0, -1, true);}
+	if(aL > fL) {juster(1, -1, true);} else {juster(0, -1, true);}
 }
 
 function angrip22() {
@@ -333,8 +334,8 @@ function angrip22() {
 
 //Angriperne sammenliknes med forsvarerne
 
-	if(aH > fH) {juster(1, -1);} else {juster(0, -1);}
-	if(aL > fL) {juster(1, -1);} else {juster(0, -1);}
+	if(aH > fH) {juster(1, -1, true);} else {juster(0, -1, true);}
+	if(aL > fL) {juster(1, -1, true);} else {juster(0, -1, true);}
 }
 
 function angrip12() {
@@ -355,7 +356,7 @@ function angrip12() {
 
 //Angriperne sammenliknes med forsvarerne
 
-	if(aH > fH) {juster(1, -1);} else {juster(0, -1);}
+	if(aH > fH) {juster(1, -1, true);} else {juster(0, -1, true);}
 }
 
 function angrip31() {
@@ -376,7 +377,7 @@ function angrip31() {
 
 //Angriperne sammenliknes med forsvarerne
 
-	if(aH > fH) {juster(1, -1);} else {juster(0, -1);}
+	if(aH > fH) {juster(1, -1, true);} else {juster(0, -1, true);}
 }
 
 function angrip21() {
@@ -398,7 +399,7 @@ function angrip21() {
 
 //Angriperne sammenliknes med forsvarerne
 
-	if(aH > fH) {juster(1, -1);} else {juster(0, -1);}
+	if(aH > fH) {juster(1, -1, true);} else {juster(0, -1, true);}
 }
 
 function angrip11() {
@@ -409,7 +410,7 @@ function angrip11() {
 	document.getElementById('visTerninger0').innerHTML = "<img src='"+d[a[0]]+"' id='a1'>";
 	document.getElementById('visTerninger1').innerHTML = "<img src='"+d[f[0]]+"' id='f1'>";
 
-	if(a[0] > f[0]) {juster(1, -1);} else {juster(0, -1);}
+	if(a[0] > f[0]) {juster(1, -1, true);} else {juster(0, -1, true);}
 }
 
 function stopp() {
@@ -420,6 +421,14 @@ function stopp() {
 function angrip() {
 	//console.log('angrip');
 	if(antall[0] > 1 && antall[1] > 0) {
+		if (!angrepPagar) {
+			rundeNr = 0;
+			antallStart[0] = antall[0];
+			antallStart[1] = antall[1];
+			angrepPagar = true;
+		}
+		rundeNr++;
+
 		tomVarslinger();
 		var antAfor = antall[0];
 		var antFfor = antall[1];
@@ -444,6 +453,15 @@ function angrip() {
 
 		var diff = [antall[0] - antAfor, antall[1] - antFfor];
 		skrivTilSiste(diff);
+
+		function skrivTot(nr) {
+			if (nr == rundeNr) {
+				var diff2 = [antall[0] - antallStart[0], antall[1] - antallStart[1]];
+				skrivTilSiste(diff2);
+			}
+		}
+
+		setTimeout(skrivTot, 1500, rundeNr);
 	}
 	//else {document.getElementById('varslinger').innerHTML = 'Det er ikke nok folk';}
 }
@@ -516,12 +534,12 @@ function knappNed(e) {
 	}
 	//if (k == 8) {stopp();}
 	if (k == 32) {sporBlitz();}
-	if (b == 'Q') {juster(0, -1);}
-	if (b == 'A') {juster(0, -5);}
-	if (b == 'E') {juster(0, +1);}
-	if (b == 'D') {juster(0, +5);}
-	if (b == 'U') {juster(1, -1);}
-	if (b == 'J') {juster(1, -5);}
-	if (b == 'O') {juster(1, +1);}
-	if (b == 'L') {juster(1, +5);}
+	if (b == 'Q') {juster(0, -1, false);}
+	if (b == 'A') {juster(0, -5, false);}
+	if (b == 'E') {juster(0, +1, false);}
+	if (b == 'D') {juster(0, +5, false);}
+	if (b == 'U') {juster(1, -1, false);}
+	if (b == 'J') {juster(1, -5, false);}
+	if (b == 'O') {juster(1, +1, false);}
+	if (b == 'L') {juster(1, +5, false);}
 }
