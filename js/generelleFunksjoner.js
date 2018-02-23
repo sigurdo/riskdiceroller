@@ -98,14 +98,14 @@ function visAntall() {
 				} else {
 					visEl[i].style.width = '220px';
 					divEl[j].style.display = 'block';
-					//divEl[j].style.padding = '10px 20px 10px 20px';
+					divEl[j].style.padding = '10px 20px 10px 20px';
 					divEl[j].style.fontSize = '300%';
 				}
 			} else {
 				visEl[i].style.width = '165px';
 				divEl[j].style.display = 'block';
-				//divEl[j].style.padding = '20px 35px 20px 35px';
-				divEl[j].style.fontSize = '500%';
+				divEl[j].style.padding = '12px 26px 12px 26px';
+				divEl[j].style.fontSize = '400%';
 			}
 		}
 	}
