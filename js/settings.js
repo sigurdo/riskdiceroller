@@ -59,7 +59,21 @@ function oppdaterInput() {
 
 	//Oppdaterer valg for ventetid:
 	valgVentetidEl.innerHTML = '';
-	var valgVentetid = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
+	
+	var temp = localStorage.getItem('5QSGeP_valgVentetid');
+	if (temp == null) {
+		localStorage.setItem('5QSGeP_valgVentetid', JSON.stringify([
+			{navn: 'Ingen', ms: 0, def: false},
+			{navn: 'Kort', ms: 250, def: false},
+			{navn: 'Middels', ms: 750, def: true},
+			{navn: 'Lang', ms: 1500, def: false},
+			{navn: 'Episk', ms: 3144, def: false}
+		]));
+		var valgVentetid = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
+	}
+	else {
+		var valgVentetid = JSON.parse(temp);
+	}
 
 	var tr = document.createElement('tr');
 	tr.innerHTML = '<th> Navn </th> <th> ms </th> <th> Default </th> <th>  </th>';
