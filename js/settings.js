@@ -7,6 +7,7 @@ function apnelukke(e) {
 
 function slett(e) {
 	var slettNr = Number(e.target.id[5]);
+	console.log(e.target.id[5]);
 	var valgVentetid = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
 	valgVentetid.splice(slettNr, 1);
 	localStorage.setItem('5QSGeP_valgVentetid', JSON.stringify(valgVentetid));
@@ -36,9 +37,9 @@ function leggTil() {
 	var narmestPlass = valgVentetid.length;
 	for (var i = 0; i < valgVentetid.length; i++) {
 		var diff = valgVentetid[i].ms - ny.ms;
-		if(diff >= 0 && diff <= narmest) {
+		if(diff > 0 && diff <= narmest) {
 			narmest = diff;
-			narmestPlass = i + 1;
+			narmestPlass = i;
 		}
 	}
 	valgVentetid.splice(narmestPlass, 0, ny);
@@ -59,6 +60,11 @@ function oppdaterInput() {
 	//Oppdaterer valg for ventetid:
 	valgVentetidEl.innerHTML = '';
 	var valgVentetid = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
+
+	var tr = document.createElement('tr');
+	tr.innerHTML = '<th> Navn </th> <th> ms </th> <th> Default </th> <th>  </th>';
+	valgVentetidEl.appendChild(tr);
+
 	for (var i = 0; i < valgVentetid.length; i++) {
 		var tr = document.createElement('tr');
 		var navnEl = document.createElement('td');
@@ -66,17 +72,17 @@ function oppdaterInput() {
 		tr.appendChild(navnEl);
 
 		var msEl = document.createElement('td');
-		msEl.innerHTML = '<input type="number" id="ms'+i+'" value="'+valgVentetid[i].ms+'">ms';
+		msEl.innerHTML = '<input type="number" id="ms'+i+'" value="'+valgVentetid[i].ms+'">';
 		tr.appendChild(msEl);
 
 		var settDefEl = document.createElement('td');
 		settDefEl.id = 'settDef'+i;
 		if (valgVentetid[i].def) {
-			settDefEl.innerHTML = 'Default';
+			settDefEl.innerHTML = '<img id="defValgVentetidBilde" src="media/checkmark.png">';
 		}
 		else {
 			settDefEl.style.cursor = 'pointer';
-			settDefEl.innerHTML = 'Sett som default';
+			settDefEl.innerHTML = '';
 			settDefEl.addEventListener('click', settDef);
 		}
 		tr.appendChild(settDefEl);
@@ -84,7 +90,7 @@ function oppdaterInput() {
 		var slettEl = document.createElement('td');
 		slettEl.id = 'slett'+i;
 		slettEl.style.cursor = 'pointer';
-		slettEl.innerHTML = 'Slett';
+		slettEl.innerHTML = '<img class="slettValgVentetidBilde" id="slett'+i+'" src="media/slett.png">';
 		slettEl.addEventListener('click', slett);
 		tr.appendChild(slettEl);
 
@@ -97,7 +103,7 @@ function oppdaterInput() {
 	tr.appendChild(navnEl);
 
 	var msEl = document.createElement('td');
-	msEl.innerHTML = '<input type="number" id="msNy" value="0">ms';
+	msEl.innerHTML = '<input type="number" id="msNy" value="0">';
 	tr.appendChild(msEl);
 
 	var settDefEl = document.createElement('td');
@@ -105,7 +111,7 @@ function oppdaterInput() {
 
 	var leggTilEl = document.createElement('td');
 	leggTilEl.style.cursor = 'pointer';
-	leggTilEl.innerHTML = 'Legg til';
+	leggTilEl.innerHTML = '<img id="leggTilValgVentetidBilde" src="media/add.png">';
 	leggTilEl.addEventListener('click', leggTil);
 	tr.appendChild(leggTilEl);
 

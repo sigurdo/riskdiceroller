@@ -190,7 +190,7 @@ function sporBlitz() {
 	ventetidEl.style.fontSize = '200px';
 
 	var temp = localStorage.getItem('5QSGeP_valgVentetid');
-	if (temp == null) {
+	if (null == null) {
 		localStorage.setItem('5QSGeP_valgVentetid', JSON.stringify([
 			{navn: 'Ingen', ms: 0, def: false},
 			{navn: 'Kort', ms: 250, def: false},

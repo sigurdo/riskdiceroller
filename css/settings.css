@@ -4,6 +4,7 @@ html, body {
 }
 
 h1 {
+	font-size: 400%;
 	margin: 0px;
 	padding: 25px 10px 25px 10px;/*Bytter avstand til padding fordi dette kan ødelegge høydeflexing*/
 	text-align: center;
@@ -21,6 +22,7 @@ h1 {
 }
 
 h2 {
+	font-size: 400%;
 	cursor: pointer;
 }
 
@@ -29,7 +31,11 @@ h2 {
 }
 
 #defMinAng {
-	width: 50px;
+	width: 150px;
+}
+
+#valgVentetid th {
+	font-size: 48px;
 }
 
 #valgVentetid {
@@ -37,19 +43,25 @@ h2 {
 }
 
 #valgVentetid td {
-	padding: 1px;
+	height: 100px;
 }
 
 #valgVentetid input[type="text"] {
-	width: 150px;
+	width: 350px;
+	height: 100%;
 }
 
 #valgVentetid input[type="number"] {
-	width: 100px;
+	width: 200px;
+	height: 100%;
+}
+
+#defValgVentetidBilde, .slettValgVentetidBilde, #leggTilValgVentetidBilde {
+	height: 100%;
 }
 
 #bruk {
-	font-size: 24px;
+	font-size: 72px;
 }
 
 .meny {
