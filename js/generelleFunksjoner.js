@@ -467,7 +467,7 @@ function angrip() {
 }
 
 function angripBlitz(minAngripere, ventetid) {
-	//console.log('blitzer');
+	//console.log('blitzer', minAngripere, ventetid);
 	//var minAngripereString = prompt("Minimum angripere igjen:", 1);
 	//var minAngripere = Number(minAngripereString);
 	//console.log(minAngripereString);

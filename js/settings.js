@@ -6,6 +6,7 @@ function apnelukke(e) {
 }
 
 function slett(e) {
+	bruk();
 	var slettNr = Number(e.target.id[5]);
 	console.log(e.target.id[5]);
 	var valgVentetid = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
@@ -15,6 +16,7 @@ function slett(e) {
 }
 
 function settDef(e) {
+	bruk();
 	var settNr = Number(e.target.id[7]);
 	var valgVentetid = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
 	for (var i = 0; i < valgVentetid.length; i++) {
@@ -26,6 +28,7 @@ function settDef(e) {
 }
 
 function leggTil() {
+	bruk();
 	var valgVentetid = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
 	var ny = {
 		navn: document.querySelector('#navnNy').value,
@@ -55,13 +58,19 @@ function oppdaterInput() {
 		defMinAngEl.appendChild(option);
 	}
 
-	defMinAngEl.value = localStorage.getItem('5QSGeP_defMinAng');
+	var defMinAng = localStorage.getItem('5QSGeP_defMinAng');
+	if (JSON.parse(defMinAng) == null) {
+		localStorage.setItem('5QSGeP_defMinAng', 3);
+		defMinAng = localStorage.getItem('5QSGeP_defMinAng');
+	}
+
+	defMinAngEl.value = defMinAng;
 
 	//Oppdaterer valg for ventetid:
 	valgVentetidEl.innerHTML = '';
 	
 	var temp = localStorage.getItem('5QSGeP_valgVentetid');
-	if (temp == null) {
+	if (JSON.parse(temp) == null) {
 		localStorage.setItem('5QSGeP_valgVentetid', JSON.stringify([
 			{navn: 'Ingen', ms: 0, def: false},
 			{navn: 'Kort', ms: 250, def: false},
@@ -112,7 +121,7 @@ function oppdaterInput() {
 	}
 
 	var tr = document.createElement('tr');
-	var navnEl = document.createElement('navn');
+	var navnEl = document.createElement('td');
 	navnEl.innerHTML = '<input type="text" id="navnNy" value="Ny">';
 	tr.appendChild(navnEl);
 
@@ -142,7 +151,18 @@ function bruk() {
 		valgVentetid[i].navn = document.querySelector('#navn'+i).value;
 		valgVentetid[i].ms = Number(document.querySelector('#ms'+i).value);
 	}
+
+	valgVentetid.sort(function(a, b) {return a.ms - b.ms;}); //Sorterer stigende etter ms
+
 	localStorage.setItem('5QSGeP_valgVentetid', JSON.stringify(valgVentetid));
+	oppdaterInput();
+}
+
+function tilbakestill() {
+	localStorage.setItem('5QSGeP_defMinAng', null);
+	localStorage.setItem('5QSGeP_valgVentetid', null);
+
+	oppdaterInput();
 }
 
 
@@ -158,10 +178,12 @@ var valgVentetidEl = document.querySelector('#valgVentetid');
 var spillMusikkEl = document.querySelector('#spillMusikk');
 var lydsporEl = document.querySelector('#lydspor');
 var brukEl = document.querySelector('#bruk');
+var tilbakestillEl = document.querySelector('#tilbakestill');
 
 
 //Lyttere:
 brukEl.addEventListener('click', bruk)
+tilbakestillEl.addEventListener('click', tilbakestill);
 var h2 = document.querySelectorAll('h2');
 for (var i = 0; i < h2.length; i++) {
 	h2[i].addEventListener('click', apnelukke);
