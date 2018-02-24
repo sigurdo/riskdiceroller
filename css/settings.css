@@ -36,6 +36,7 @@ h2 {
 
 #valgVentetid th {
 	font-size: 48px;
+	padding: 8px;
 }
 
 #valgVentetid {
@@ -44,6 +45,7 @@ h2 {
 
 #valgVentetid td {
 	height: 100px;
+	text-align: center;
 }
 
 #valgVentetid input[type="text"] {

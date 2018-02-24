@@ -8,7 +8,6 @@ function apnelukke(e) {
 function slett(e) {
 	bruk();
 	var slettNr = Number(e.target.id[5]);
-	console.log(e.target.id[5]);
 	var valgVentetid = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
 	valgVentetid.splice(slettNr, 1);
 	localStorage.setItem('5QSGeP_valgVentetid', JSON.stringify(valgVentetid));
@@ -155,7 +154,6 @@ function bruk() {
 	valgVentetid.sort(function(a, b) {return a.ms - b.ms;}); //Sorterer stigende etter ms
 
 	localStorage.setItem('5QSGeP_valgVentetid', JSON.stringify(valgVentetid));
-	oppdaterInput();
 }
 
 function tilbakestill() {
@@ -182,7 +180,10 @@ var tilbakestillEl = document.querySelector('#tilbakestill');
 
 
 //Lyttere:
-brukEl.addEventListener('click', bruk)
+brukEl.addEventListener('click', function() {
+	bruk();
+	oppdaterInput();
+});
 tilbakestillEl.addEventListener('click', tilbakestill);
 var h2 = document.querySelectorAll('h2');
 for (var i = 0; i < h2.length; i++) {
