@@ -103,6 +103,11 @@ input::-webkit-inner-spin-button {*/
 	text-align: center;
 }
 
+.visTerninger {
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
 .visTerninger img {
 	width: 25%;
 	margin: 10px;

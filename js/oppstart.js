@@ -11,6 +11,7 @@ var angrepPagar = false;
 var antallStart = [0, 0]; //Passer på hvor mange det var da et angrep starta
 var rundeNr = 0; //Teller antall sammenhegende angrep
 var sporBlitzOppe = false;
+var ventetidAlternativer = [];
 
 
 //HTML-elementer:

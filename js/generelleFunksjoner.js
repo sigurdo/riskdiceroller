@@ -4,7 +4,10 @@ function nullstill() {
 
 function oppdaterTerningvelger(type) {//Oppdatere, dvs. sjekke om det er mange nok folk på hvert lag til å velge de forskjellige antall terninger
 //For grammatikkens skyld legger jeg til en endelse som avhenger av terninger i optionen
-	var endelse = ['Ikke i bruk', '', 'er', 'er']; //Kan legge til endelse for større tall hvis dette skulle være relevant
+	var endelse = ['Ikke i bruk', '']; //Kan legge til endelse for større tall hvis dette skulle være relevant
+	for (var i = 2; i <= 10; i++) {
+		endelse[i] = 'er';
+	}
 //Angriperside
 	if (type == 0) {
 		document.getElementById('antallTerninger0').innerHTML = "";
@@ -13,24 +16,34 @@ function oppdaterTerningvelger(type) {//Oppdatere, dvs. sjekke om det er mange n
 			document.getElementById('antallTerninger0'+i).innerHTML = "";
 		}*/
 		
-		for (var i = 3; i >= 1; i--) {
+		for (var i = 10; i >= 1; i--) {
 			//console.log(i);
 			//document.getElementById('antallTerninger01').style.display = 'none';
 			if (antall[0] - 1 >= i) {
 				document.getElementById('antallTerninger0').innerHTML += "<option value='"+i+"' id='antallTerninger0"+i+"'> "+i+" Terning"+endelse[i]+" </option>";
 			}	
 		}
+
+		//Pusher opp antall terninger mot 3
+		for (var i = 1; i <= antall[0] - 1 && i <= 3; i++) {
+			document.getElementById('antallTerninger0').value = i;
+		}
 	}
 
 //Forsvarerside
 	else if (type == 1) {
 		document.getElementById('antallTerninger1').innerHTML = "";
-		for (var i = 2; i >= 1; i--) {
+		for (var i = 10; i >= 1; i--) {
 			//console.log(i);
 			//document.getElementById('antallTerninger01').style.display = 'none';
 			if (antall[1] >= i) {
 				document.getElementById('antallTerninger1').innerHTML += "<option value='"+i+"' id='antallTerninger1"+i+"'> "+i+" Terning"+endelse[i]+" </option>";
 			}
+		}
+
+		//Pusher opp antall terninger mot 2
+		for (var i = 1; i <= antall[1] && i <= 2; i++) {
+			document.getElementById('antallTerninger1').value = i;
 		}
 	}
 }
@@ -198,10 +211,10 @@ function sporBlitz() {
 			{navn: 'Lang', ms: 1500, def: false},
 			{navn: 'Episk', ms: 3144, def: false}
 		]));
-		var ventetidAlternativer = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
+		ventetidAlternativer = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
 	}
 	else {
-		var ventetidAlternativer = JSON.parse(temp);
+		ventetidAlternativer = JSON.parse(temp);
 	}
 	//console.log(JSON.parse(localStorage.getItem('5QSGeP_valgVentetid')));
 
@@ -274,6 +287,30 @@ function sporBlitz() {
 		angripBlitz(minAngripere, ventetid);
 	});
 	sporBlitzEl.appendChild(blitzKnapp);
+}
+
+function angripGenerell(antallAngripere, antallForsvarere) {
+	document.getElementById('visTerninger0').innerHTML = '';
+	var a =[];
+	for (var i = 0; i < antallAngripere; i++) {
+		a[i] = terning();
+		document.getElementById('visTerninger0').innerHTML += '<img src="'+d[a[i]]+'" id="a'+i+'">';
+	}
+
+	document.getElementById('visTerninger1').innerHTML = '';
+	var f = [];
+	for (var i = 0; i < antallForsvarere; i++) {
+		f[i] = terning();
+		document.getElementById('visTerninger1').innerHTML += '<img src="'+d[f[i]]+'" id="f'+i+'">';
+	}
+
+	a.sort(function(a, b) {return b - a;});
+	f.sort(function(a, b) {return b - a;});
+
+	for (var i = 0; i < a.length && i < f.length; i++) {
+		if (a[i] > f[i]) {juster(1, -1, true);}
+		else {juster(0, -1, true);}
+	}
 }
 
 function angrip32() {
@@ -404,7 +441,7 @@ function angrip21() {
 
 function angrip11() {
 	var a = [terning()];		//angrepsterninger
-	var f = [terning()];					//forsvarsterninger
+	var f = [terning()];		//forsvarsterninger
 
 //Viser terninger
 	document.getElementById('visTerninger0').innerHTML = "<img src='"+d[a[0]]+"' id='a1'>";
@@ -438,12 +475,14 @@ function angrip() {
 		var antallTerninger1 = Number(document.querySelector('#antallTerninger1').value);
 		//console.log(antallTerninger0, antallTerninger1);
 
-		if (antallTerninger0 == 3 && antallTerninger1 == 2) {angrip32();}
+		/*if (antallTerninger0 == 3 && antallTerninger1 == 2) {angrip32();}
 		else if (antallTerninger0 == 2 && antallTerninger1 == 2) {angrip22();}
 		else if (antallTerninger0 == 1 && antallTerninger1 == 2) {angrip12();}
 		else if (antallTerninger0 == 3 && antallTerninger1 == 1) {angrip31();}
 		else if (antallTerninger0 == 2 && antallTerninger1 == 1) {angrip21();}
-		else if (antallTerninger0 == 1 && antallTerninger1 == 1) {angrip11();}
+		else if (antallTerninger0 == 1 && antallTerninger1 == 1) {angrip11();}*/
+
+		angripGenerell(antallTerninger0, antallTerninger1);
 
 		//if (antall[0]>=4 && antall[1]>=2) {angrip32();}
 		/*else if (antall[0] == 3 && antall[1] >= 2) {angrip22();}
@@ -480,12 +519,7 @@ function angripBlitz(minAngripere, ventetid) {
 	angripEl.style.display = 'none';
 	blitzEl.style.display = 'none';
 
-	var antForst = [antall[0], antall[1]];
-
 	function ferdig() {
-		var diff = [antall[0] - antForst[0], antall[1] - antForst[1]];
-		skrivTilSiste(diff);
-		
 		blitzing = true;
 
 		stoppEl.style.display = 'none';
@@ -519,7 +553,7 @@ function knappNed(e) {
 	if (k == 13 && sporBlitzOppe) {
 		var sporBlitzEl = document.querySelector('#sporBlitz');
 		var minAngripere = Number(document.querySelector('#minAngripere').value);
-		var ventetid = Number(document.querySelector('#ventetid').value);
+		var ventetid = ventetidAlternativer[Number(document.querySelector('#ventetid').value)].ms;
 		//var ventetid = document.querySelector('#ventetidId').value;
 		bodyEl.removeChild(sporBlitzEl);
 		sporBlitzOppe = false;
