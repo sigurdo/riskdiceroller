@@ -62,7 +62,7 @@ html, body {
 	touch-action: zoom;
 }
 
-#visAngripere, #visForsvarere {
+.vis {
 	display: block;
 	width: 165px;
 	color: white;

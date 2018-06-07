@@ -54,9 +54,13 @@ function tomVarslinger() {
 
 function juster(type, ant, angrep) {//funksjonen juster justerer opp og ned antallet angripere og forsvarere type=0 er angripere og type=1 er forsvarere. var angrep er boolsk og informerer om angrep pågår eller ikke
 	//console.log('justerer');
-	if (!angrep) {
+	if (!angrep && angrepPagar) {
+		angrepPagarEl[0].style.display = 'none';
+		angrepPagarEl[1].style.display = 'none';
+
 		angrepPagar = false;
 	}
+
 	var antallFor = [];
 	antallFor[type] = antall[type];
 	var minimum = 0;
@@ -129,7 +133,7 @@ function terning() {
 	return n
 }
 
-function fargeGammel(dode) {//Dode er hvor mange som døde for den siden i stste slag (husk at det er -diff)
+function fargeGammel(dode) {//dode er hvor mange som døde for den siden i stste slag (husk at det er -diff)
 	var r = 255 - (10 * dode).toFixed(0);
 	var g = 220 - (110 * dode).toFixed(0);
 	var b = 0 .toFixed(0);
@@ -462,6 +466,10 @@ function angrip() {
 			rundeNr = 0;
 			antallStart[0] = antall[0];
 			antallStart[1] = antall[1];
+
+			angrepPagarEl[0].style.display = 'block';
+			angrepPagarEl[1].style.display = 'block';
+
 			angrepPagar = true;
 		}
 		rundeNr++;
@@ -519,9 +527,9 @@ function angripBlitz(minAngripere, ventetid) {
 	angripEl.style.display = 'none';
 	blitzEl.style.display = 'none';
 
+	blitzing = true;
+	
 	function ferdig() {
-		blitzing = true;
-
 		stoppEl.style.display = 'none';
 		angripEl.style.display = 'block';
 		blitzEl.style.display = 'block';
@@ -549,8 +557,8 @@ function knappNed(e) {
 	//console.log(e.keyCode);
 	var k = e.keyCode;
 	var b = String.fromCharCode(k);
-	if (k == 13 && !sporBlitzOppe) {angrip();}
-	if (k == 13 && sporBlitzOppe) {
+	if (k == 32 && !sporBlitzOppe) {angrip();}
+	if (k == 32 && sporBlitzOppe) {
 		var sporBlitzEl = document.querySelector('#sporBlitz');
 		var minAngripere = Number(document.querySelector('#minAngripere').value);
 		var ventetid = ventetidAlternativer[Number(document.querySelector('#ventetid').value)].ms;
@@ -567,7 +575,7 @@ function knappNed(e) {
 		stopp();
 	}
 	//if (k == 8) {stopp();}
-	if (k == 32) {sporBlitz();}
+	if (k == 13 && !sporBlitzOppe && !blitzing) {sporBlitz();}
 	if (b == 'Q') {juster(0, -1, false);}
 	if (b == 'A') {juster(0, -5, false);}
 	if (b == 'E') {juster(0, +1, false);}
