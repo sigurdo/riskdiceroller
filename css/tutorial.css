@@ -1,69 +1,26 @@
 html, body {
 	margin: 0px;
 	height: 100%;/*Tillater høydeflexing*/
+	background-color: black;
 }
 
 h1 {
-	font-size: 400%;
 	margin: 0px;
 	padding: 25px 10px 25px 10px;/*Bytter avstand til padding fordi dette kan ødelegge høydeflexing*/
-	text-align: center;
-	/*font-size: 400%;*/
 }
 
-.ramme {
-	margin: 0px 10% 0px 10%;
+h2, h3, h4, h5, h6  {
+	margin: 0px;
+	padding: 15px 0px 15px 0px;/*Bytter avstand til padding fordi dette kan ødelegge høydeflexing*/
 }
 
-.header {
-	height: 12%;
-	background-color: white;
-	color: black;
-}
-
-h2 {
-	font-size: 400%;
-	cursor: pointer;
-}
-
-.skjema {
+img {
 	display: block;
+	margin: 6px;
 }
 
-#defMinAng {
-	width: 150px;
-}
-
-#valgVentetid th {
-	font-size: 48px;
-	padding: 8px;
-}
-
-#valgVentetid {
-	width: 100%;
-}
-
-#valgVentetid td {
-	height: 100px;
-	text-align: center;
-}
-
-#valgVentetid input[type="text"] {
-	width: 350px;
-	height: 100%;
-}
-
-#valgVentetid input[type="number"] {
-	width: 200px;
-	height: 100%;
-}
-
-#defValgVentetidBilde, .slettValgVentetidBilde, #leggTilValgVentetidBilde {
-	height: 100%;
-}
-
-#bruk, #tilbakestill {
-	font-size: 72px;
+#ramme {/*Hvis man putter et div-element med id="ramme" i body, og gir body class="vannrett" blir hele nettsida midtstilt*/
+	margin: 0px 0px 0px 0px;
 }
 
 .meny {
@@ -95,8 +52,6 @@ table, th, td {
 	flex-direction: row;
 	-webkit-justify-content: center;
 	justify-content: center;
-	-webkit-align-items: top;
-	align-items: top;
-	/*-webkit-flex-wrap: wrap;
-	flex-wrap: wrap;*/
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
 }

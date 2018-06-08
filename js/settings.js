@@ -74,8 +74,8 @@ function oppdaterInput() {
 			{navn: 'Ingen', ms: 0, def: false},
 			{navn: 'Kort', ms: 250, def: false},
 			{navn: 'Middels', ms: 750, def: true},
-			{navn: 'Lang', ms: 1500, def: false},
-			{navn: 'Episk', ms: 3144, def: false}
+			{navn: 'Lang', ms: 3144, def: false},
+			{navn: 'Episk', ms: 6288, def: false}
 		]));
 		var valgVentetid = JSON.parse(localStorage.getItem('5QSGeP_valgVentetid'));
 	}
