@@ -178,6 +178,18 @@ input::-webkit-inner-spin-button {*/
 	padding: 20px 60px 20px 60px;
 }
 
+#fullscreenIcon {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	margin: 5px;
+	padding: 10px;
+	height: 90px;
+	border-radius: 5px;
+	/*background-color: white;*/
+	cursor: pointer;
+}
+
 #varslinger {
 	position: absolute;
 	bottom: 0px;

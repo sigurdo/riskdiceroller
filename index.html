@@ -105,6 +105,18 @@
 		</audio>
 		<!---->
 
+		<!--Setter fullskjerm-->
+		<img src="media/fullscreen.png" id="fullscreenIcon">
+		<script type="text/javascript">
+			var fullscreenIcon = document.querySelector("#fullscreenIcon");
+
+			function maksimer(e) {
+				document.documentElement.webkitRequestFullscreen();
+			}
+
+			fullscreenIcon.addEventListener("click", maksimer);
+		</script>
+
 		<!--Alle viktige funksjoner-->
 		<script type="text/javascript" src="js/generelleFunksjoner.js"></script>
 
