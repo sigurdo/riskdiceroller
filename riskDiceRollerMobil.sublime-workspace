@@ -1,0 +1,1053 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"angrepPa",
+				"angrepPagarEl"
+			],
+			[
+				"game",
+				"gameOverEl"
+			],
+			[
+				"gam",
+				"gameOver"
+			],
+			[
+				"sjekk",
+				"sjekkTidUte"
+			],
+			[
+				"nytt",
+				"nyttStykke"
+			],
+			[
+				"key",
+				"keyCode"
+			],
+			[
+				"g",
+				"g"
+			],
+			[
+				"fo",
+				"for\tfor (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"kra",
+				"krasjlyd"
+			],
+			[
+				"an",
+				"antallTerninger1"
+			],
+			[
+				"antall",
+				"antallTerninger0"
+			],
+			[
+				"sp",
+				"spillere"
+			],
+			[
+				"spi",
+				"spillerTerritorier"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"rotat",
+				"rotateX"
+			],
+			[
+				"rotate",
+				"rotateX()"
+			],
+			[
+				"defMin",
+				"defMinAng"
+			],
+			[
+				"defMina",
+				"defMinAngEl"
+			],
+			[
+				"gj",
+				"gjenopprettEl"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"va",
+				"valgVentetidEl"
+			],
+			[
+				"skr",
+				"skrivTilSiste"
+			],
+			[
+				"5Q",
+				"5QSGeP_defMinaAng"
+			],
+			[
+				"vente",
+				"ventetid"
+			],
+			[
+				"narme",
+				"narmestPlass"
+			],
+			[
+				"val",
+				"valgVentetid"
+			],
+			[
+				"na",
+				"navnEl"
+			],
+			[
+				"sle",
+				"slettEl"
+			],
+			[
+				"valg",
+				"valgVentetid"
+			],
+			[
+				"slett",
+				"slettNr"
+			],
+			[
+				"vent",
+				"ventetidAlternativer"
+			],
+			[
+				"ve",
+				"ventetidAlternativer"
+			],
+			[
+				"valgVe",
+				"valgVentetidEl"
+			],
+			[
+				"defM",
+				"defMinAngEl"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"spor",
+				"sporBlitzOppe"
+			],
+			[
+				"inn",
+				"innerHTML"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"min",
+				"minimum"
+			],
+			[
+				"stopp",
+				"stoppEl"
+			],
+			[
+				"bakgr",
+				"bakgrunnsmusikkEl"
+			],
+			[
+				"bak",
+				"bakgrunnsmusikkEl"
+			],
+			[
+				"venteti",
+				"ventetidId"
+			],
+			[
+				"venti",
+				"ventetidEl"
+			],
+			[
+				"vetn",
+				"ventetidEl"
+			],
+			[
+				"avbry",
+				"avbrytKnapp"
+			],
+			[
+				"spo",
+				"sporBlitzEl"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"man",
+				"maned"
+			],
+			[
+				"mane",
+				"manedNavn"
+			],
+			[
+				"dogn",
+				"dognTot"
+			],
+			[
+				"fil",
+				"filInputEl"
+			],
+			[
+				"opp",
+				"oppdaterFeilGjettaBokstaver"
+			],
+			[
+				"ramme",
+				"rammeEl"
+			],
+			[
+				"flex-",
+				"flex-start"
+			],
+			[
+				"los",
+				"losningsordArr"
+			],
+			[
+				"fart",
+				"fartSiste10Frames"
+			],
+			[
+				"far",
+				"fartSiste10Frames"
+			],
+			[
+				"koll",
+				"kollidertKurvkant"
+			],
+			[
+				"kolli",
+				"kollidertBaller"
+			],
+			[
+				"kollidert",
+				"kollidertBaller"
+			],
+			[
+				"kollide",
+				"kollidertVegg"
+			],
+			[
+				"bal",
+				"baller"
+			],
+			[
+				"ball",
+				"ball2"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"vekt",
+				"vektor"
+			],
+			[
+				"ku",
+				"kurvkantPos"
+			],
+			[
+				"sum",
+				"sumKcalTemp"
+			],
+			[
+				"tem",
+				"temp3"
+			],
+			[
+				"input",
+				"inputA"
+			],
+			[
+				"body",
+				"bodyEl"
+			],
+			[
+				"bg",
+				"bgfargeInputEl"
+			],
+			[
+				"riktig",
+				"riktigFarge"
+			],
+			[
+				"oppd",
+				"oppdaterPoeng"
+			],
+			[
+				"po",
+				"poengSpm2"
+			],
+			[
+				"nes",
+				"nesteSpm"
+			],
+			[
+				"sen",
+				"sendSvarSpm1"
+			],
+			[
+				"spa",
+				"space-between"
+			],
+			[
+				"border-",
+				"border-bottom"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"out",
+				"outputEl"
+			],
+			[
+				"sirk",
+				"sirkelOmkrets"
+			],
+			[
+				"rekt",
+				"rektagnelOmkrets"
+			],
+			[
+				"rek",
+				"rektagnelOmkrets"
+			],
+			[
+				"kvadr",
+				"kvadratOmkretsEl"
+			],
+			[
+				"kv",
+				"kvadratAreal"
+			],
+			[
+				"kvad",
+				"kvadratArealEl"
+			],
+			[
+				"kva",
+				"kvadratOmkrets"
+			],
+			[
+				"regis",
+				"registreringssoneEl"
+			],
+			[
+				"regi",
+				"registreringssoneEl"
+			],
+			[
+				"align",
+				"align-items"
+			],
+			[
+				"spill",
+				"spiller0El"
+			],
+			[
+				"ak",
+				"aksellerasjonAbs"
+			],
+			[
+				"aks",
+				"aksellerasjon"
+			],
+			[
+				"akse",
+				"aksellerasjonAbs"
+			],
+			[
+				"fun",
+				"fun\tFunction"
+			],
+			[
+				"fly",
+				"flytting"
+			],
+			[
+				"settings_ic",
+				"settings_iconEl"
+			],
+			[
+				"snurr",
+				"snurring"
+			],
+			[
+				"farge",
+				"fargeSpiller"
+			],
+			[
+				"endScreen",
+				"endScreenEl"
+			],
+			[
+				"antallTer",
+				"antallTerninger1"
+			],
+			[
+				"t",
+				"t"
+			],
+			[
+				"background",
+				"background-size"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"background-co",
+				"background-color"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"gangeta",
+				"gangetabellBoks"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"backgr",
+				"background-size"
+			],
+			[
+				"me",
+				"meta\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 4108,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/generelleFunksjoner.js",
+			"settings":
+			{
+				"buffer_size": 18981,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/oppstart.js",
+			"settings":
+			{
+				"buffer_size": 1911,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/riskDiceRoller.css",
+			"settings":
+			{
+				"buffer_size": 4664,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/grid.css",
+			"settings":
+			{
+				"buffer_size": 471,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Arithmetic"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil",
+		"/D/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/css"
+	],
+	"file_history":
+	[
+		"/D/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-02-05_hangman/js/hangman.js",
+		"/D/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-02-05_hangman/hangman.html",
+		"/D/Skole/Dokumenter Vg3/IT-2/07_oveEksamen/2018-04-07_freakingMath/test.html",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/css/tutorial.css",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/tutorial.html",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/js/settings.js",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/settings.html",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/css/settings.css",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/js/sigurdsStandardFunksjoner.js",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/russekort/index.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/dagligOvingTuba/dagligOvingTuba.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/dagligOvingTuba/test.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/dagligOvingTuba/js/dagligOvingTuba.js",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/dagligOvingTuba/js/dagligOvingTubaMedSetInterval.js",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/index.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_oveEksamen/2018-04-10_dagligOvingTuba/js/dagligOvingTuba.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_oveEksamen/2018-04-10_dagligOvingTuba/dagligOvingTuba.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_oveEksamen/2018-04-10_dagligOvingTuba/css/dagligOvingTuba.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_jsAnimasjoner/2018-04-07_freakingMath/test.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_jsAnimasjoner/2018-04-07_freakingMath/css/test.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-03-16_sigurdsFargepalett/testside2.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-03-16_sigurdsFargepalett/css/testside2.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-03-16_sigurdsFargepalett/testside.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-03-16_sigurdsFargepalett/css/testside.css",
+		"/G/IT-prosjekter/riskDiceRoller/riskFordeleTerritorier/css/skjema.css",
+		"/G/IT-prosjekter/riskDiceRoller/riskFordeleTerritorier/css/riskFordeleTerritorier.css",
+		"/G/IT-prosjekter/riskDiceRoller/riskFordeleTerritorier/index.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-03-16_sigurdsFargepalett/randomPalett.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-03-16_sigurdsFargepalett/js/decToHex.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_jsAnimasjoner/z_mal1/js/sigurdsStandardFunksjoner.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-03-16_sigurdsFargepalett/js/sigurdsStandardFunksjoner.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_jsAnimasjoner/z_mal1/css/skjema.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_jsAnimasjoner/2018-03-19_oveEksamen/css/skjema.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_jsAnimasjoner/2018-03-19_oveEksamen/css/oppg6.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_jsAnimasjoner/2018-03-19_oveEksamen/oppg6.html",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/css/riskDiceRoller.css",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/js/oppstart.js",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/js/generelleFunksjoner.js",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/index.html",
+		"/G/IT-prosjekter/riskDiceRoller/riskFordeleTerritorier/js/sigurdsStandardFunksjoner.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-03-16_sigurdsFargepalett/css/sigurdsFargepalett.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/2018-03-16_sigurdsFargepalett/sigurdsFargepalett.html",
+		"/G/Skole/Tenke høyere utdanning/Må spørre rådgiver.txt",
+		"/G/Skole/Dokumenter Vg3/IT-2/04_arrays+objects/prove/oppg2.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/z_mal1/mal1.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/z_mal1/css/mal1.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/prove2017/besvarelse/css/oppg2.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/prove2017/besvarelse/css/oppg1.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/prove2017/besvarelse/oppg1.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas+cssAnimasjoner/prove2017/besvarelse/oppg2.html",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/css/skjema.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/04_arrays+objects/prove/oppg1.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/07_merCss/z_mal1/mal1.html",
+		"/G/IT-prosjekter/riskDiceRoller/riskDiceRollerMobil/riskDiceRollerMobil.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/riskDiceRollerMobil/css/riskDiceRoller.css",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/riskDiceRollerMobil/js/sigurdsStandardFunksjoner.js",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/riskDiceRollerMobil/js/oppstart.js",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/riskDiceRollerMobil/js/generelleFunksjoner.js",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/riskDiceRollerMobil/riskDiceRollerMobil.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/riskDiceRollerMobil/css/mal1.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/02_basicJs/2017-10-15_RISK_diceRoller/RISK_diceRollerInternal.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/riskDiceRollerMobil.html",
+		"/D/Users/Sigurd/Downloads/Oppgave1.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/3parad/3parad.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/minStartside/startsideStil.css",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/basketsimulator/basketsimulator.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/epilepsibakgrunn/epilepsiBakgrunn.js",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/ravioli/ravioliStil.css",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/minStartside/startside.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/ravioli/meny.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/epilepsibakgrunn/epilepsi.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-02-11_fileSystemAPITesting/testing.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/testLocalStorage/test.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/basketsimulator/css/basketStil.css",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/polynomloserInternalCss.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/basketsimulator/animasjonsStil.css",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/basketsimulator/index.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/03_redigereElementer/2017-11-09_steinSaksPapir/steinSaksPapir.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/steinSaksPapir/steinSaksPapir.html",
+		"/D/Users/Sigurd/Documents/GitHub/sigurdo.github.io/basketSimulator/animasjonsStil.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-02-07_testLocalStorage+getTime/test.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-02-05_hangman/hangman.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-01-30_basketSimulator/kasteBall.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-02-05_hangman/js/hangman.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/z_mal1/js/sigurdsStandardFunksjoner.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-02-07_testLocalStorage/test.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-02-08_testFileUpload/testing.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-02-08_testFileUpload/js/sigurdsStandardFunksjoner.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-02-05_hangman/css/mal1.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-01-30_basketSimulator/animasjonsStil.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/03_redigereElementer/2017-11-16_knappenSomStikkerAv/knappenSomStikkerAv.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-01-30_basketSimulator/2017-09-13_JSanimation.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/01_basicHtml+css/2017-09-13_JSanimation/animasjonsStil.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/06_canvas/2018-01-29_canvasIntro/Eksamen_array_kosthold (1).html",
+		"/G/Skole/Dokumenter Vg3/IT-2/01_basicHtml+css/2017-09-13_JSanimation/animasjon.html",
+		"/D/Users/Sigurd/Downloads/Eksamen_array_kosthold (1).html",
+		"/G/Skole/Dokumenter Vg3/IT-2/04_arrays+objects/z_mal1/js/sigurdsStandardFunksjoner.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/02_basicJs/2017-10-09_polynomloser/losPolynom.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/itolympiaden/besvarelser/blippcoins.cpp",
+		"/G/Skole/Dokumenter Vg3/IT-2/04_arrays+objects/2018-01-23_hoegsProductionHjemmeside/hovedside.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/04_arrays+objects/2018-01-23_hoegsProductionHjemmeside/mal1.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/04_arrays+objects/greie/mal1.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/arrays+objects/2018-01-15_3PaRad/RepArObj4/RepArObj4.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/arrays+objects/2018-01-15_3PaRad/3parad.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/arrays+objects/2018-01-15_3PaRad/css/mal1.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-10-15_RISK_diceRoller/RISK_diceRollerInternal.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/z_mal1/css/mal1.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/z_mal1/css/skjema.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-12-04_utforskLabel/unyttigSkjema.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-12-04_utforskLabel/css/skjema.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-12-04_utforskLabel/css/mal1.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-30_lesedagHeldags/velgBakgrunnsfarge.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-09-22_epilepsibakgrunn/epilepsi.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-09-22_epilepsibakgrunn/epilepsiBakgrunn.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-30_lesedagHeldags/css/velgBakgrunnsfarge.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-30_lesedagHeldags/primtall.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-23_innleveringForHeldags/oppg4.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-23_innleveringForHeldags/js/quiz.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-23_innleveringForHeldags/0kopierDenne.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-23_innleveringForHeldags/js/sigurdsStandardFunksjoner.js",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-23_innleveringForHeldags/css/quiz.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-23_innleveringForHeldags/css/grid.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-23_innleveringForHeldags/css/oppgaver.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-23_innleveringForHeldags/oppg3.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-16_knappenSomStikkerAv/knappenSomStikkerAv.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-09_steinSaksPapir/steinSaksPapir.html",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-16_knappenSomStikkerAv/css/mal1.css",
+		"/G/Skole/Dokumenter Vg3/IT-2/javascript/2017-11-09_steinSaksPapir/css/steinSaksPapir.css"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"width=device-width, ",
+			"figure",
+			"blitzing",
+			"angrepPagar",
+			"\n\t\t\t\t",
+			"\n\t",
+			"16",
+			"}*/\n",
+			"700px",
+			"antallForsvarere",
+			"terning",
+			"}\n",
+			"console",
+			"gjenopprett",
+			"72px",
+			"juster",
+			"console.log",
+			"defMinaAng",
+			"getMinaAng",
+			"ss",
+			"block",
+			"blitzVindu",
+			"angrepDiv",
+			"forsvarDiv",
+			"siste",
+			"farge",
+			"farge(",
+			";/**/",
+			"minimum",
+			"blitz",
+			"stoppEl",
+			"\t\t\n",
+			"getRandInteger",
+			"this",
+			"console",
+			"oppdaterTer",
+			"bodyEl",
+			"sporBlitz",
+			"Vannrett",
+			"vannrett",
+			"fartSiste10",
+			"2",
+			"lime",
+			"green",
+			"fart",
+			"height",
+			"300",
+			"//",
+			"22ff57",
+			"980px",
+			"%);",
+			"diffA",
+			"f05000",
+			"00a000",
+			" -",
+			"));\n",
+			"}",
+			"5deg",
+			" /",
+			"summen",
+			"fiendtlig",
+			"jetflamme"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4108,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2178,
+								2178
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1628.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/generelleFunksjoner.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18981,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6823,
+								6823
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3446.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/oppstart.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1911,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								924,
+								924
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "css/riskDiceRoller.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4664,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1776,
+								1776
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2874.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "css/grid.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 471,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								154,
+								154
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.726998491704,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 102.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/C++/C++ Single File.sublime-build",
+	"project": "riskDiceRollerMobil.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 208.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -33,7 +33,7 @@ html, body {
 .forgrunn {
 	/*position: fixed;*/
 	top: 0%;
-	width: 980px;
+	width: 360px;
 }
 
 #angrepBakgrunn {
@@ -49,12 +49,12 @@ html, body {
 }
 
 .justerAntall div {
-	font-size: 300%;
+	font-size: 110%;
 	font-weight: bold;
 	font-family: calibri;
 	text-align: center;
-	margin: 10px;
-	padding: 10px 20px 10px 20px;
+	margin: 4px;
+	padding: 4px 8px 4px 8px;
 	border-radius: 10%;
 	background-color: #048a77;
 	background-color: #26A69A;
@@ -64,15 +64,15 @@ html, body {
 
 .vis {
 	display: block;
-	width: 165px;
+	width: 60px;
 	color: white;
 	background-color: transparent;
 	border: none;
 	text-align: center;
 
 	font-family: times;
-	font-size: 800%;
-	margin: 20px;
+	font-size: 294%;
+	margin: 8px;
 }
 
 /*Kode for å fjerne piler i input til visAngripere og visForsvarere. Den virker som den er litt buggete*/
@@ -84,21 +84,21 @@ input::-webkit-inner-spin-button {*/
 /*}*/
 
 .velgTerninger select {
-	font-size: 66px;
+	font-size: 24px;
 	width: 100%;
-	padding: 15px;
+	padding: 5px;
 }
 
 .velgTerninger option {
-	font-size: 22px;
+	font-size: 8px;
 }
 
 .siste {
-	margin: 25px;
-	/**/height: 240px;/**/
+	margin: 9px;
+	/**/height: 88px;/**/
 	/**/background-color: transparent;/**/
 	color: white;
-	font-size: 1250%;
+	font-size: 459%;
 	font-weight: bold;
 	text-align: center;
 }
@@ -110,82 +110,82 @@ input::-webkit-inner-spin-button {*/
 
 .visTerninger img {
 	width: 25%;
-	margin: 10px;
+	margin: 4px;
 	background-color: white;
-	border-radius: 17px;
+	border-radius: 6px;
 }
 
 #stoppRamme {
 	position: absolute;
-	bottom: 50px;
+	bottom: 18px;
 	width: 100%;
 }
 
 #stopp {
-	height: 280px;
-	border-radius: 140px;
+	height: 100px;
+	border-radius: 50px;
 	background-color: #ff3232;
 	cursor: pointer;
 
-	font-size: 170px;
+	font-size: 62px;
 	font-weight: bold;
 	font-family: 'arial';
 	color: white;
 	text-align: center;
-	padding: 40px 120px 40px 120px;
+	padding: 15px 44px 15px 44px;
 }
 
 #angripRamme {
 	position: absolute;
-	bottom: 200px;
+	bottom: 73px;
 	width: 100%;
 }
 
 #angrip {
 	/*width: 500px;*/
-	height: 250px;
+	height: 92px;
 	/** /border: 5px solid #790820;/**/
-	border-radius: 150px;
+	border-radius: 46px;
 	background-color: #333;
 	cursor: pointer;
 
-	font-size: 170px;
+	font-size: 62px;
 	font-weight: bold;
 	font-family: 'arial narrow';
 	color: white;
 	text-align: center;
-	padding: 25px 75px 25px 75px;
+	padding: 8px 24px 8px 24px;
 }
 
 #blitzRamme {
 	position: absolute;
-	bottom: 10px;
+	bottom: 4px;
 	width: 100%;
 }
 
 #blitz {
-	height: 180px;
+	height: 66px;
 	/** /border: 5px solid #790820;/**/
-	border-radius: 100px;
+	border-radius: 33px;
 	background-color: #ff5722;
 	cursor: pointer;
 
-	font-size: 120px;
+	font-size: 44px;
 	font-weight: bold;
 	font-family: 'arial narrow';
 	color: white;
 	text-align: center;
-	padding: 20px 60px 20px 60px;
+	padding: 8px 22px 8px 22px;
 }
 
 #fullscreenIcon {
 	position: fixed;
 	top: 0px;
 	right: 0px;
-	margin: 5px;
-	padding: 10px;
-	height: 90px;
-	border-radius: 5px;
+	margin: 2px;
+	padding: 4px;
+	height: 33px;
+	border-radius: 2px;
 	/*background-color: white;*/
 	cursor: pointer;
 }
@@ -240,13 +240,13 @@ h1 {
 	margin: 0px;
 	padding: 0px;/*Bytter avstand til padding fordi dette kan ødelegge høydeflexing*/
 	text-align: center;
-	font-size: 400%;
+	font-size: 147%;
 }
 
 .header {
 	height: 12%;
-	font-size: 700%;
-	/*background-color: white;*/
+	font-size: 257%;
+	/**/background-color: white;/**/
 	color: white;
 }
 

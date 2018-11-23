@@ -68,7 +68,7 @@ function juster(type, ant, angrep) {//funksjonen juster justerer opp og ned anta
 	if(antall[type] + ant >= minimum) {//Denne ifen passer på at man ikke får negativt antall soldater, ettersom dette kan være litt irriterende
 		antall[type] += ant;
 	}
-	else {antall[type] = 0;}//Denne elsen gjør at -10-knappen kan sette tall under 10 til å bli null
+	else {antall[type] = 0;}//Denne elsen gjør at -5-knappen kan sette tall under 0 til å bli null
 	visAntall();
 
 	var antallTerninger = Number(document.querySelector('#antallTerninger'+type).value);
@@ -113,16 +113,16 @@ function visAntall() {
 					visEl[i].style.width = '100%';
 					divEl[j].style.display = 'none';
 				} else {
-					visEl[i].style.width = '220px';
+					visEl[i].style.width = '80px';
 					divEl[j].style.display = 'block';
-					divEl[j].style.padding = '10px 20px 10px 20px';
-					divEl[j].style.fontSize = '300%';
+					divEl[j].style.padding = '4px 8px 4px 8px';
+					divEl[j].style.fontSize = '110%';
 				}
 			} else {
-				visEl[i].style.width = '165px';
+				visEl[i].style.width = '60px';
 				divEl[j].style.display = 'block';
-				divEl[j].style.padding = '12px 26px 12px 26px';
-				divEl[j].style.fontSize = '400%';
+				divEl[j].style.padding = '4px 10px 4px 10px';
+				divEl[j].style.fontSize = '147%';
 			}
 		}
 	}
@@ -166,8 +166,8 @@ function skrivTilSiste(diff) {//diff må være array
 	for (var i = 0; i < diff.length; i++) {
 		sisteEl[i].innerHTML = diff[i];
 		sisteEl[i].style.backgroundColor = farge(diff[i] / (diff[0]+diff[1]));
-		sisteEl[i].style.fontSize = '1250%';
-		if (sisteEl[i].innerHTML.length > 4) {sisteEl[i].style.fontSize = '1000%';}
+		sisteEl[i].style.fontSize = '459%';
+		if (sisteEl[i].innerHTML.length > 4) {sisteEl[i].style.fontSize = '367%';}
 	}
 }
 
@@ -180,18 +180,18 @@ function sporBlitz() {
 	sporBlitzEl.style.top = '0px';
 	sporBlitzEl.style.width = '100%';
 	sporBlitzEl.style.height = '100%';
-	sporBlitzEl.style.padding = '50px';
+	sporBlitzEl.style.padding = '20px';
 	sporBlitzEl.style.backgroundColor = 'white';
-	sporBlitzEl.style.fontSize = '75px';
+	sporBlitzEl.style.fontSize = '30px';
 	sporBlitzEl.innerHTML = 'Minimum angripere igjen: <br>';
 
 	var minAngripereEl = document.createElement('select');
 	minAngripereEl.id = 'minAngripere';
-	minAngripereEl.style.width = '400px';
-	minAngripereEl.style.height = '250px';
-	minAngripereEl.style.fontSize = '200px';
+	minAngripereEl.style.width = '144px';
+	minAngripereEl.style.height = '92px';
+	minAngripereEl.style.fontSize = '72px';
 
-	for (var i = 1; i <= antall[0]; i++) {
+	for (var i = 1; i <= Math.min(antall[0], 251); i++) {
 		var alternativEl = document.createElement('option');
 		alternativEl.value = i;
 		alternativEl.innerHTML = i;
@@ -202,9 +202,9 @@ function sporBlitz() {
 	sporBlitzEl.innerHTML += '<br><br> Ventetid per angrep: <br>';
 	var ventetidEl = document.createElement('select');
 	ventetidEl.id = 'ventetid';
-	ventetidEl.style.width = '750px';
-	ventetidEl.style.height = '250px';
-	ventetidEl.style.fontSize = '200px';
+	ventetidEl.style.width = '276px';
+	ventetidEl.style.height = '92px';
+	ventetidEl.style.fontSize = '72px';
 
 	var temp = localStorage.getItem('5QSGeP_valgVentetid');
 	if (temp == null) {
@@ -257,12 +257,12 @@ function sporBlitz() {
 	sporBlitzEl.appendChild(document.createElement('br'));
 
 	var avbrytKnapp = document.createElement('button');
-	avbrytKnapp.style.fontSize = '150px';
-	avbrytKnapp.style.margin = '15px';
-	avbrytKnapp.style.padding = '25px';
+	avbrytKnapp.style.fontSize = '50px';
+	avbrytKnapp.style.margin = '5px';
+	avbrytKnapp.style.padding = '10px';
 	/*avbrytKnapp.style.color = 'white';
 	avbrytKnapp.style.backgroundColor = '#ff5722';*/
-	avbrytKnapp.style.borderRadius = '35px';
+	avbrytKnapp.style.borderRadius = '12px';
 	avbrytKnapp.style.border = 'none';
 	avbrytKnapp.style.cursor = 'pointer';
 	avbrytKnapp.innerHTML = 'Avbryt';
@@ -273,12 +273,12 @@ function sporBlitz() {
 	sporBlitzEl.appendChild(avbrytKnapp);
 
 	var blitzKnapp = document.createElement('button');
-	blitzKnapp.style.fontSize = '150px';
-	blitzKnapp.style.margin = '15px';
-	blitzKnapp.style.padding = '25px';
+	blitzKnapp.style.fontSize = '50px';
+	blitzKnapp.style.margin = '5px';
+	blitzKnapp.style.padding = '10px';
 	blitzKnapp.style.color = 'white';
 	blitzKnapp.style.backgroundColor = '#ff5722';
-	blitzKnapp.style.borderRadius = '35px';
+	blitzKnapp.style.borderRadius = '12px';
 	blitzKnapp.style.border = 'none';
 	blitzKnapp.style.cursor = 'pointer';
 	blitzKnapp.innerHTML = 'Blitz';
