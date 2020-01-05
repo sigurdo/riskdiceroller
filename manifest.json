@@ -3,5 +3,47 @@
 	"short_name": "RISK DR",
 	"start_url": "index.html",
 	"display": "standalone",
-	"orientation": "portrait-primary"
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "media/icon-72.png",
+			"type": "image/png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "media/icon-96.png",
+			"type": "image/png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "media/icon-128.png",
+			"type": "image/png",
+			"sizes": "128x128"
+		},
+		{
+			"src": "media/icon-144.png",
+			"type": "image/png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "media/icon-152.png",
+			"type": "image/png",
+			"sizes": "152x152"
+		},
+		{
+			"src": "media/icon-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "media/icon-384.png",
+			"type": "image/png",
+			"sizes": "384x384"
+		},
+		{
+			"src": "media/icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
 }
