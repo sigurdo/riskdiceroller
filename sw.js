@@ -45,5 +45,5 @@ self.addEventListener('install', evt => {
 self.addEventListener('fetch', evt => {
 	evt.respondWith(caches.match(evt.request).then(cacheRes => {
 		return cacheRes || fetch(evt.request);
-	}));
+	}).catch(err => console.log(err)));
 });
