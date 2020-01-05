@@ -1,3 +1,4 @@
+console.log('Kjører sw.js');
 const staticCacheName = "site-static";
 const assets = [
 	"index.html",
