@@ -119,6 +119,14 @@
 			fullscreenIcon.addEventListener("click", maksimer);
 		</script>
 
+		<script type="text/javascript">
+			console.log(navigator);
+			navigator.serviceWorker.register('sw.js');
+			if ('serviceWorker' in navigator) {
+				console.log('hei');
+			}
+		</script>
+
 		<!--Alle viktige funksjoner-->
 		<script type="text/javascript" src="js/generelleFunksjoner.js"></script>
 
