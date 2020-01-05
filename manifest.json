@@ -1,0 +1,9 @@
+{
+	"name": "RISK Dice Roller",
+	"short_name": "RISK DR",
+	"start_url": "/index.html",
+	"display": "standalone",
+	"background-color": "#FF0000",
+	"theme_color": "#00FF00",
+	"orientation": "portrait-primary"
+}
