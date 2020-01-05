@@ -43,6 +43,7 @@ self.addEventListener('install', evt => {
 });
 
 self.addEventListener('fetch', evt => {
+	console.log('fetching something...');
 	evt.respondWith(caches.match(evt.request).then(cacheRes => {
 		console.log('cacheRes:', cacheRes);
 		return cacheRes || fetch(evt.request);
