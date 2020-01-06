@@ -1,6 +1,7 @@
 console.log('Kjører sw.js');
 const staticCacheName = "site-static";
 const assets = [
+	"./",
 	"index.html",
 	"css/grid.css",
 	"css/riskDiceRoller.css",
@@ -23,6 +24,14 @@ const assets = [
 	"media/favicon.ico",
 	"media/fullscreen.png",
 	"media/gloriousMorning.mp3",
+	"media/icon-72.png",
+	"media/icon-96.png",
+	"media/icon-128.png",
+	"media/icon-144.png",
+	"media/icon-152.png",
+	"media/icon-192.png",
+	"media/icon-384.png",
+	"media/icon-512.png",
 	"media/s1.png",
 	"media/s2.png",
 	"media/s3.png",
@@ -33,18 +42,31 @@ const assets = [
 	"media/slett.png",
 	"manifest.json",
 	"settings.html",
-	"sw.js",
-	"tutorial.html"
+	"tutorial.html",
+	"sw.js"
 ];
 
 self.addEventListener('install', evt => {
+	console.log('Installing...');
 	evt.waitUntil(caches.open(staticCacheName).then(cache => {
-		cache.addAll(assets);
+		console.log('Pre-caching assets...');
+		for (let i = 0; i < assets.length; i++) {
+			console.log('Caching', assets[i]);
+			cache.add(assets[i]).then((ting) => {
+				console.log('Successfully cached', assets[i]);
+			}).catch(err => {
+				console.log('Could not cache', assets[i], err);
+			});
+		}
 	}));
 });
 
+self.addEventListener('activate', evt => {
+	console.log('Activating...', evt);
+});
+
 self.addEventListener('fetch', evt => {
-	console.log('fetching something...');
+	console.log('Fetching', evt.request);
 	evt.respondWith(caches.match(evt.request).then(cacheRes => {
 		console.log('cacheRes:', cacheRes);
 		return cacheRes || fetch(evt.request);

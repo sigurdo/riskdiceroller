@@ -113,12 +113,12 @@
 		<!---->
 
 		<!--Setter fullskjerm-->
-		<img src="media/fullscreen.png" id="fullscreenIcon">
+		<a href="tutorial.html"><img src="media/fullscreen.png" id="fullscreenIcon"></a>
 		<script type="text/javascript">
 			var fullscreenIcon = document.querySelector("#fullscreenIcon");
 
 			function maksimer(e) {
-				document.documentElement.webkitRequestFullscreen();
+				//document.documentElement.webkitRequestFullscreen();
 			}
 
 			fullscreenIcon.addEventListener("click", maksimer);
@@ -126,9 +126,9 @@
 
 		<script type="text/javascript">
 			console.log(navigator);
-			navigator.serviceWorker.register('sw.js');
 			if ('serviceWorker' in navigator) {
 				console.log('hei');
+				navigator.serviceWorker.register('sw.js');
 			}
 		</script>
 
