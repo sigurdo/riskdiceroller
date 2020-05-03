@@ -4,7 +4,9 @@
   "description": "The pwa for rolling RISK dice",
   "main": "index.js",
   "scripts": {
-    "build": "rm -r dist/* && cp -r src/site/* dist"
+    "build": "cp -r src/site/* dist && node scripts/build-sw.js",
+    "build-create": "mkdir dist && npm run build",
+    "build-clear": "rm -r dist/* && npm run build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/sigurdo/riskdiceroller/issues"
   },
-  "homepage": "https://github.com/sigurdo/riskdiceroller#readme"
+  "homepage": "https://github.com/sigurdo/riskdiceroller#readme",
+  "devDependencies": {
+    "workbox-build": "^5.1.3"
+  }
 }
