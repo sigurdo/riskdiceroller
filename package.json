@@ -4,7 +4,7 @@
   "description": "The pwa for rolling RISK dice",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -r dist/* && cp -r src/site/* dist"
   },
   "repository": {
     "type": "git",
