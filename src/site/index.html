@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> riskdiceroller </title>
+    <meta charset="utf-8">
+    <title> {{riskdiceroller}} </title>
 </head>
 <body>
     <script type="text/javascript"> const rootpath = (relpath) => `${relpath}`; </script>
     <script type="text/javascript" src="scripts/install-sw.js"></script>
-    <h1> riskdiceroller </h1>
-    <ul>
-        <li><a href="battle/"> Start battle </a></li>
-        <li><a href="territories/"> Distribute territories </a></li>
-        <li><a href="settings/"> Preferences </a></li>
-        <li><a href="tutorial/"> Usage guide </a></li>
-    </ul>
+    <div id="content" style="display: none;">
+        <h1> {{riskdiceroller}} </h1>
+        <ul>
+            <li><a href="battle/"> {{Start_battle}} </a></li>
+            <li><a href="territories/"> {{Distribute_territories}} </a></li>
+            <li><a href="settings/"> {{Preferences}} </a></li>
+            <li><a href="tutorial/"> {{Usage_guide}} </a></li>
+        </ul>
+    </div>
+
+    <script src="handlebars.js"></script>
+    <script src="scripts/apply_language.js"></script>
 </body>
 </html>
