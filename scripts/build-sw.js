@@ -11,6 +11,11 @@ async function replaceInstallSW() {
     return fs.promises.writeFile(filepath, content);
 }
 
+async function createAssetsDir() {
+    const dir = path.join(__dirname, '../dist/assets');
+    if (!fs.existsSync(dir)) return fs.promises.mkdir(dir);
+}
+
 async function downloadAsset(url, filename) {
     return new Promise((resolve, reject) => {
         const req = https.request(url, res => {
@@ -23,7 +28,7 @@ async function downloadAsset(url, filename) {
                 console.log('Error downloading', url.href, ':', err);
             });
             res.on('end', ting => {
-                fs.promises.writeFile(path.join(__dirname, `../dist/${filename}`), allData).then(() => resolve());
+                fs.promises.writeFile(path.join(__dirname, `../dist/assets/${filename}`), allData).then(() => resolve());
             });
         });
         req.end();
@@ -31,6 +36,7 @@ async function downloadAsset(url, filename) {
 }
 
 async function buildSW() {
+    await createAssetsDir();
     await downloadAsset(new URL('https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js'), 'handlebars.js');
     injectManifest(config);
     replaceInstallSW();

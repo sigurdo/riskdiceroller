@@ -2,5 +2,6 @@
 riskdiceroller.sublime-workspace
 
 dist
+src/site/assets
 
 node_modules
