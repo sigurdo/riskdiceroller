@@ -1,3 +1,19 @@
+async function httpGet(theUrl) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+    return await new Promise((res, rej) => {
+        xmlHttp.onreadystatechange = function() { 
+            if (xmlHttp.readyState === 4) {
+                if (xmlHttp.status === 200)
+                    res(xmlHttp.responseText);
+                else
+                    rej({ status: xmlHttp.status });
+            }
+        }
+    });
+}
+
 class Router {
     constructor() {
         window.addEventListener('popstate', e => {
@@ -18,15 +34,12 @@ class Router {
 
     async load(url) {
         try {
-            const hbs = await new Promise((res, rej) => $.get(`${url}index.hbs`, data => res(data)).fail(err => rej(err)));
+            const hbs = await httpGet(`${url}index.hbs`);
             contentEl.innerHTML = Handlebars.compile(hbs)(language);
             this.overrideLinks();
         } catch (err) {
-            if (err.status === 404) {
-                console.log(404);
-            }
+            console.error('Could not get', `${url}index.hbs:`, err);
         }
-        console.log('url:', url);
     }
 
     async navigate(url) {

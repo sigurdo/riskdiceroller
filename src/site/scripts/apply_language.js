@@ -4,6 +4,7 @@ const titleEl = document.querySelector('title');
     riskdiceroller: "riskterningruller",
     Start_battle: "Start angrep",
     Distribute_territories: "Fordel territorier",
+    Battle: "Slag",
     Preferences: "Innstillinger",
     Usage_guide: "Bruksanvisning"
 };/**/
