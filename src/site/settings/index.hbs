@@ -1,5 +1,29 @@
 <div>
     <title> {{language.Preferences}} - {{language.riskdiceroller}} </title>
     <h1> {{language.Preferences}} </h1>
-    ehm ehm
+    <div>
+        {{#each languages}}
+            <form name="languages_{{@key}}">
+                <h2>{{../language.Language}}: {{@key}}</h2>
+                <ul>
+                    {{#each .}}
+                        <li> {{@key}}: <input value="{{.}}" name="{{@key}}"></li>
+                    {{/each}}
+                </ul>
+                <input type="submit" name="save" value="{{../language.Save}}">
+            </form>
+        {{/each}}
+    </div>
+
+    <div>
+        <h2> {{language.Chosen_language}}: </h2>
+        <form name="chosenLanguage">
+            <select name="chosenLanguage">
+                {{#each languages}}
+                    <option value="{{@key}}" {{#ifEquals @key ../chosenLanguage}} selected {{/ifEquals}}> {{@key}} </option>
+                {{/each}}
+            </select>
+            <input type="submit" name="save" value="{{language.Save}}">
+        </form>
+    </div>
 </div>

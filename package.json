@@ -7,8 +7,8 @@
     "build": "cp -r src/site/* dist && node scripts/build-sw.js",
     "build-create": "mkdir dist && npm run build",
     "build-clear": "rm -r dist/* && npm run build",
-    "start": "http-server dist --proxy http://localhost:8080?",
-    "start-src": "http-server src/site --proxy http://localhost:8080?",
+    "start": "http-server dist -d false --proxy http://localhost:8080?",
+    "start-src": "http-server src/site -d false --proxy http://localhost:8080?",
     "full": "npm run build-clear && npm run start"
   },
   "repository": {

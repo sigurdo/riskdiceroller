@@ -6,7 +6,9 @@ const languages = {
         Preferences: "Preferences",
         Usage_guide: "Usage guide",
         Battle: "Battle",
-        Save: "Save"
+        Save: "Save",
+        Chosen_language: "Chosen language",
+        Language: "Language"
     },
     norsk: {
         riskdiceroller: "riskterningruller",
@@ -15,7 +17,9 @@ const languages = {
         Preferences: "Innstillinger",
         Usage_guide: "Bruksanvisning",
         Battle: "Slag",
-        Save: "Lagre"
+        Save: "Lagre",
+        Chosen_language: "Valgt språk",
+        Language: "Språk"
     }
 };
 

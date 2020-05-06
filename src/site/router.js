@@ -42,11 +42,18 @@ class Router {
         } catch (err) {
             console.error('Could not get', `${url}index.hbs:`, err);
         }
+        try { (await import(`${url}index.js`)).default(); }
+        catch (err) { console.error('Could not import', `${url}index.js:`, err); }
     }
 
     async navigate(url) {
         history.pushState({ url }, 'Title', url);
-        await this.load(url);
+        this.url = url;
+        await this.load(`${url[0] === '.' ? location.href : ''}${url}`);
+    }
+
+    async reload() {
+        await this.load(this.url);
     }
 
     async popstate(e) {
