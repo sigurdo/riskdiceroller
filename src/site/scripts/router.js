@@ -1,7 +1,7 @@
 class Router {
     constructor() {
         window.addEventListener('popstate', e => {
-            this.goBack(e);
+            this.popstate(e);
         });
         this.navigate(location.href);
     }
@@ -34,8 +34,7 @@ class Router {
         await this.load(url);
     }
 
-    async goBack(e) {
-        console.log('baak:', e.state);
+    async popstate(e) {
         await this.load(e.state.url);
     }
 }
