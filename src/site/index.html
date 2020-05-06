@@ -14,18 +14,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta charset="utf-8">
-    <title> riskdiceroller </title>
+    <!--<title> riskdiceroller </title>-->
 </head>
 <body>
     <script type="text/javascript"> const rootpath = (relpath) => `${relpath}`; </script>
     <script type="text/javascript" src="scripts/install-sw.js"></script>
+
+    <p id="static-text"> <!--This app requires JavaScript to run.--> </p>
     
     <div id="content" style="display: none;"></div>
 
     <script src="assets/handlebars.js"></script>
-    <script src="scripts/apply_language.js"></script>
+    <!--<script src="scripts/apply_language.js"></script>-->
     <script type="module">
-        import { router } from './scripts/router.js';
+        import { router } from './router.js';
     </script>
 </body>
 </html>

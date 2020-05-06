@@ -1,3 +1,5 @@
+import compile_hbs from './compile_hbs.js';
+
 async function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
@@ -35,7 +37,7 @@ class Router {
     async load(url) {
         try {
             const hbs = await httpGet(`${url}index.hbs`);
-            contentEl.innerHTML = Handlebars.compile(hbs)(language);
+            compile_hbs(hbs, 'TittEEEEl');
             this.overrideLinks();
         } catch (err) {
             console.error('Could not get', `${url}index.hbs:`, err);
