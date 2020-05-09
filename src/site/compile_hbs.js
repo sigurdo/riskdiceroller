@@ -4,7 +4,7 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
 
-async function compile_hbs(content, title) {
+function compile_hbs(content, title) {
     const contentEl = document.querySelector('#content');
     const staticTextEl = document.querySelector('#static-text');
     const languages = localConfig.get('languages');
