@@ -2,6 +2,6 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 
 workbox.precaching.precacheAndRoute(self.__WB_MANIFEST, {
     urlManipulation: ({ url }) => {
-        return [new URL(`${url.href}index.html`)];
+        return [new URL(`${url.origin}/index.html`)];
     }
 });

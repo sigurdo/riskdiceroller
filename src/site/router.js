@@ -1,4 +1,5 @@
 import compile_hbs from './compile_hbs.js';
+import injectCss from './inject_css.js';
 
 async function httpGet(theUrl) {
     if (theUrl[0] === '.') theUrl = `${location.href}${theUrl}`;
@@ -35,7 +36,11 @@ const moduleUrls = {
     battle: {
         path: '/battle/',
         hbs: '/battle/index.hbs',
-        js: '/battle/index.js'
+        js: '/battle/index.js',
+        css : [
+            '/battle/css/riskDiceRoller.css',
+            '/battle/css/grid.css'
+        ]
     },
     settings: {
         path: '/settings/',
@@ -58,13 +63,14 @@ const modules = {};
 
 class Router {
     constructor() {
+        console.log(new URL(location.href));
         window.addEventListener('popstate', e => {
             this.popstate(e);
         });
         const promises = [];
         for (let key in moduleUrls) {
             for (let keyy in moduleUrls[key]) {
-                promises.push(this.loadJsHbs(moduleUrls[key][keyy]));
+                if (keyy != 'path') promises.push(this.loadJsHbsCss(moduleUrls[key][keyy]));
             }
         }
 
@@ -72,7 +78,7 @@ class Router {
             for (let key in moduleUrls) {
                 modules[key] = {};
                 for (let keyy in moduleUrls[key]) {
-                    modules[key][keyy] = values.shift();
+                    if (keyy !== 'path') modules[key][keyy] = values.shift();
                 }
             }
             const url = new URL(location.href);
@@ -100,6 +106,8 @@ class Router {
         const hbs = modules[moduleName].hbs;
         compile_hbs(hbs, 'yo');
         this.overrideLinks();
+        if (modules[moduleName].css) injectCss.replaceArr(modules[moduleName].css);
+        else injectCss.flush();
         const js = modules[moduleName].js;
         js();
     }
@@ -113,18 +121,38 @@ class Router {
         }
     }
 
-    async loadHbs(url) {
+    async loadString(url) {
         try {
-            const hbs = await httpGet(url);
-            return hbs;
+            const str = await httpGet(url);
+            return str;
         }
         catch (err) { console.log('error:', err); }
     }
 
-    async loadJsHbs(url) {
+    async loadStrings(urls) {
+        const promises = [];
+        for (let i = 0; i < urls.length; i++) {
+            promises.push(loadString(urls[i]));
+        }
+        return await Promise.all();
+    }
+
+    async loadSingleJsHbsCss(url) {
         const ext = url.split('.')[url.split('.').length-1];
         if (ext === 'js') return this.loadJs(url);
-        else return this.loadHbs(url);
+        else if (ext === 'css') return this.loadString(url);
+        else return this.loadString(url);
+    }
+
+    async loadJsHbsCss(urls) {
+        if (typeof urls === 'object') {
+            const promises = [];
+            for (let i = 0; i < urls.length; i++) {
+                promises.push(this.loadSingleJsHbsCss(urls[i]));
+            }
+            return await Promise.all(promises);
+        }
+        return await this.loadSingleJsHbsCss(urls);
     }
 
     async load(url) {
