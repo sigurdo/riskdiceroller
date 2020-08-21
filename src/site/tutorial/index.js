@@ -1,1 +1,3 @@
-export default () => 0;
+const main = () => 0;
+
+export { main };

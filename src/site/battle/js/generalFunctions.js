@@ -134,27 +134,6 @@ function terning() {
     return n
 }
 
-function fargeGammel(dode) {//dode er hvor mange som døde for den siden i stste slag (husk at det er -diff)
-    var r = 255 - (10 * dode).toFixed(0);
-    var g = 220 - (110 * dode).toFixed(0);
-    var b = 0 .toFixed(0);
-    return "rgb("+r+", "+g+", "+b+")";
-}
-
-function fargeGammel2(n) {
-    var r = (-0.000453*n**3 + 0.106*n**2 - 8.65*n + 255).toFixed(0);
-    var g = (-128*n +255).toFixed(0);
-    var b = (-0.0000065*n**4 + 0.00162*n**3 - 0.142*n**2 + 4.45*n - 0.106).toFixed(0);
-    var farge = 'rgb('+r+', '+g+', '+b+')';
-    //console.log(farge);
-    //var tekstboks1 = document.querySelector('#tekstboks1');
-    //console.log(tekstboks1);
-    //document.getElementById("tekstboks1").style.color = farge;
-    //tekstboks1.style.backgroundColor = farge;
-
-    return farge;
-}
-
 function farge(dode) {//Dode er hvor mange som døde for den siden i siste slag (husk at det er -diff)
     //console.log('mekker farge');
     var r = 255 - (0 * dode).toFixed(0);
@@ -318,143 +297,6 @@ function angripGenerell(antallAngripere, antallForsvarere) {
     }
 }
 
-function angrip32() {
-    var a = [terning(), terning(), terning()];      //angrepsterninger
-    var f = [terning(), terning()];                 //forsvarsterninger
-
-//Viser terninger
-    document.getElementById('visTerninger0').innerHTML = "<img src='"+d[a[0]]+"' id='a1'><img src='"+d[a[1]]+"' id='a2'><img src='"+d[a[2]]+"' id='a3'>";
-    document.getElementById('visTerninger1').innerHTML = "<img src='"+d[f[0]]+"' id='f1'><img src='"+d[f[1]]+"' id='f2'>";
-
-//  console.log(a, f);
-
-//Ordner angriperne
-    var aH = Math.max(a[0], a[1], a[2]); //angriper høyest
-    //Jeg må nå finne nest høyest. Da sjekker jeg hvilken som er høyest nå og setter den lik 0
-    var i = 0;
-    var funnet = false;
-    while (i <= 2 && !funnet) {
-        if(a[i] === aH) {
-            a[i] = 0;
-            funnet = true;
-        }
-        i++;
-    }
-    var aL = Math.max(a[0], a[1], a[2]); //angriper lavest
-
-//Ordner forsvarerne
-    var fH = Math.max(f[0], f[1]); //forsvarer høyest
-    var fL = Math.min(f[0], f[1]); //forsvarer lavest
-
-    //console.log(aL, fL);
-
-//Angriperne sammenliknes med forsvarerne
-
-    if(aH > fH) {juster(1, -1, true);} else {juster(0, -1, true);}
-    if(aL > fL) {juster(1, -1, true);} else {juster(0, -1, true);}
-}
-
-function angrip22() {
-    var a = [terning(), terning()];     //angrepsterninger
-    var f = [terning(), terning()];                 //forsvarsterninger
-
-//Viser terninger
-    document.getElementById('visTerninger0').innerHTML = "<img src='"+d[a[0]]+"' id='a1'><img src='"+d[a[1]]+"' id='a2'>";
-    document.getElementById('visTerninger1').innerHTML = "<img src='"+d[f[0]]+"' id='f1'><img src='"+d[f[1]]+"' id='f2'>";
-
-    //console.log(a, f);
-
-//Ordner angriperne
-    var aH = Math.max(a[0], a[1]); //angriper høyest
-    var aL = Math.min(a[0], a[1]); //angriper lavest
-
-//Ordner forsvarerne
-    var fH = Math.max(f[0], f[1]); //forsvarer høyest
-    var fL = Math.min(f[0], f[1]); //forsvarer lavest
-
-    //console.log(aL, fL);
-
-//Angriperne sammenliknes med forsvarerne
-
-    if(aH > fH) {juster(1, -1, true);} else {juster(0, -1, true);}
-    if(aL > fL) {juster(1, -1, true);} else {juster(0, -1, true);}
-}
-
-function angrip12() {
-    var a = [terning()];        //angrepsterninger
-    var f = [terning(), terning()];                 //forsvarsterninger
-
-//Viser terninger
-    document.getElementById('visTerninger0').innerHTML = "<img src='"+d[a[0]]+"' id='a1'>";
-    document.getElementById('visTerninger1').innerHTML = "<img src='"+d[f[0]]+"' id='f1'><img src='"+d[f[1]]+"' id='f2'>";
-
-    //console.log(a, f);
-
-//Ordner angriperne
-    var aH = a[0];
-
-//Ordner forsvarerne
-    var fH = Math.max(f[0], f[1]); //forsvarer høyest
-
-//Angriperne sammenliknes med forsvarerne
-
-    if(aH > fH) {juster(1, -1, true);} else {juster(0, -1, true);}
-}
-
-function angrip31() {
-    var a = [terning(), terning(), terning()];      //angrepsterninger
-    var f = [terning()];                    //forsvarsterninger
-
-//Viser terninger
-    document.getElementById('visTerninger0').innerHTML = "<img src='"+d[a[0]]+"' id='a1'><img src='"+d[a[1]]+"' id='a2'><img src='"+d[a[2]]+"' id='a3'>";
-    document.getElementById('visTerninger1').innerHTML = "<img src='"+d[f[0]]+"' id='f1'>";
-
-    //console.log(a, f);
-
-//Ordner angriperne
-    var aH = Math.max(a[0], a[1], a[2]);
-
-//Ordner forsvarerne
-    var fH = f[0]; //forsvarer høyest
-
-//Angriperne sammenliknes med forsvarerne
-
-    if(aH > fH) {juster(1, -1, true);} else {juster(0, -1, true);}
-}
-
-function angrip21() {
-    var a = [terning(), terning()];     //angrepsterninger
-    var f = [terning()];                    //forsvarsterninger
-
-//Viser terninger
-    document.getElementById('visTerninger0').innerHTML = "<img src='"+d[a[0]]+"' id='a1'><img src='"+d[a[1]]+"' id='a2'>";
-    document.getElementById('visTerninger1').innerHTML = "<img src='"+d[f[0]]+"' id='f1'>";
-
-    //console.log(a, f);
-
-//Ordner angriperne
-    var aH = Math.max(a[0], a[1]); //angriper høyest
-    var aL = Math.min(a[0], a[1]); //angriper lavest
-
-//Ordner forsvarerne
-    var fH = f[0];
-
-//Angriperne sammenliknes med forsvarerne
-
-    if(aH > fH) {juster(1, -1, true);} else {juster(0, -1, true);}
-}
-
-function angrip11() {
-    var a = [terning()];        //angrepsterninger
-    var f = [terning()];        //forsvarsterninger
-
-//Viser terninger
-    document.getElementById('visTerninger0').innerHTML = "<img src='"+d[a[0]]+"' id='a1'>";
-    document.getElementById('visTerninger1').innerHTML = "<img src='"+d[f[0]]+"' id='f1'>";
-
-    if(a[0] > f[0]) {juster(1, -1, true);} else {juster(0, -1, true);}
-}
-
 function stopp() {
     blitzing = false;
     stoppEl.style.display = 'none';
@@ -482,22 +324,8 @@ function angrip() {
     //Kaster terninger
         var antallTerninger0 = Number(document.querySelector('#antallTerninger0').value);
         var antallTerninger1 = Number(document.querySelector('#antallTerninger1').value);
-        //console.log(antallTerninger0, antallTerninger1);
-
-        /*if (antallTerninger0 == 3 && antallTerninger1 == 2) {angrip32();}
-        else if (antallTerninger0 == 2 && antallTerninger1 == 2) {angrip22();}
-        else if (antallTerninger0 == 1 && antallTerninger1 == 2) {angrip12();}
-        else if (antallTerninger0 == 3 && antallTerninger1 == 1) {angrip31();}
-        else if (antallTerninger0 == 2 && antallTerninger1 == 1) {angrip21();}
-        else if (antallTerninger0 == 1 && antallTerninger1 == 1) {angrip11();}*/
 
         angripGenerell(antallTerninger0, antallTerninger1);
-
-        //if (antall[0]>=4 && antall[1]>=2) {angrip32();}
-        /*else if (antall[0] == 3 && antall[1] >= 2) {angrip22();}
-        else if (antall[0] == 3 && antall[1] >= 2)*/
-
-        //else {document.getElementById('varslinger').innerHTML = 'Ta resten manuelt';}
 
         var diff = [antall[0] - antAfor, antall[1] - antFfor];
         skrivTilSiste(diff);
@@ -511,15 +339,9 @@ function angrip() {
 
         setTimeout(skrivTot, 1500, rundeNr);
     }
-    //else {document.getElementById('varslinger').innerHTML = 'Det er ikke nok folk';}
 }
 
 function angripBlitz(minAngripere, ventetid) {
-    //console.log('blitzer', minAngripere, ventetid);
-    //var minAngripereString = prompt("Minimum angripere igjen:", 1);
-    //var minAngripere = Number(minAngripereString);
-    //console.log(minAngripereString);
-
     bakgrunnsmusikkEl.setAttribute('loop', '');
     bakgrunnsmusikkEl.currentTime = 38.3;
     bakgrunnsmusikkEl.play();
@@ -575,7 +397,6 @@ function knappNed(e) {
     } else if (k == 8) {
         stopp();
     }
-    //if (k == 8) {stopp();}
     if (k == 13 && !sporBlitzOppe && !blitzing) {sporBlitz();}
     if (b == 'Q') {juster(0, -1, false);}
     if (b == 'A') {juster(0, -5, false);}
@@ -657,18 +478,10 @@ export {
     forsvarereInput,
     visAntall,
     terning,
-    fargeGammel,
-    fargeGammel2,
     farge,
     skrivTilSiste,
     sporBlitz,
     angripGenerell,
-    angrip32,
-    angrip22,
-    angrip12,
-    angrip31,
-    angrip21,
-    angrip11,
     stopp,
     angrip,
     angripBlitz,

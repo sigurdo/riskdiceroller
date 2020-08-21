@@ -22,4 +22,4 @@ async function main () {
         });
 }
 
-export default main;
+export { main };

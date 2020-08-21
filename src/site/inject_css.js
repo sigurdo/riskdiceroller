@@ -1,6 +1,6 @@
 class InjectCss {
-    constructor() {
-        this.style = document.querySelector('style#injectCss');
+    constructor(styleTagSelector) {
+        this.style = document.querySelector(styleTagSelector);
     }
 
     add(newCss) {
@@ -23,6 +23,6 @@ class InjectCss {
     }
 }
 
-const injectCss = new InjectCss();
+const injectCss = new InjectCss('style#injectCss');
 
-export default injectCss;
+export { InjectCss, injectCss };
