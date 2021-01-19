@@ -21,7 +21,7 @@ html, body {
 }
 
 .bakgrunn {
-    position: fixed;
+    position: absolute;
     opacity: 0.6;
 }
 

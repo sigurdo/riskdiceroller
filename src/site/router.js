@@ -1,5 +1,5 @@
 import compile_hbs from './compile_hbs.js';
-import injectCss from './inject_css.js';
+import { InjectCss, injectCss } from './inject_css.js';
 
 async function httpGet(theUrl) {
     if (theUrl[0] === '.') theUrl = `${location.href}${theUrl}`;
@@ -59,6 +59,14 @@ const moduleUrls = {
     }
 }
 
+const menubarUrls = {
+    hbs: '/menubar/index.hbs',
+    css: [
+        '/menubar/css/menubar.css'
+    ],
+    js: '/menubar/index.js'
+}
+
 const modules = {};
 
 class Router {
@@ -67,7 +75,9 @@ class Router {
         window.addEventListener('popstate', e => {
             this.popstate(e);
         });
-        const promises = [];
+
+        // Loading all modules:
+        let promises = [];
         for (let key in moduleUrls) {
             for (let keyy in moduleUrls[key]) {
                 if (keyy != 'path') promises.push(this.loadJsHbsCss(moduleUrls[key][keyy]));
@@ -82,18 +92,34 @@ class Router {
                 }
             }
             const url = new URL(location.href);
-            const moduleName = pathModules[url.pathname];
-            this.navigateModule(moduleName || '');
+            const moduleName = pathModules[url.pathname] || '';
+            this.navigateModule(moduleName).then(() => {
+                document.querySelector('#static-text').style.display = 'none';
+                document.querySelector('#content').style.display = 'block';
+            });
+        });
+
+        // Loading menubar:
+        promises = [];
+        for (let key in menubarUrls) {
+            promises.push(this.loadJsHbsCss(menubarUrls[key]));
+        }
+        Promise.all(promises).then((values) => {
+                document.querySelector("#menubar_wrapper").innerHTML = compile_hbs(values.shift());
+                (new InjectCss('#menubar_css')).replaceArr(values.shift());
+                values.shift().main();
+                this.overrideLinks('#menubar_wrapper a');
         });
     }
 
-    overrideLinks() {
-        const a = document.querySelectorAll('a');
+    overrideLinks(selector) {
+        if (selector === undefined) selector = '#content a';
+        const a = document.querySelectorAll(selector);
         for (let i = 0; i < a.length; i++) {
             a[i].addEventListener('click', e => {
                 const href = e.target.href;
                 const moduleName = e.target.getAttribute('data-modulename');
-                if (moduleName) {
+                if (moduleName !== undefined) {
                     e.preventDefault();
                     this.navigateModule(moduleName, href);
                 }
@@ -104,17 +130,17 @@ class Router {
     loadModule(moduleName) {
         this.moduleName = moduleName;
         const hbs = modules[moduleName].hbs;
-        compile_hbs(hbs, 'yo');
+        document.querySelector('#content').innerHTML = compile_hbs(hbs);
         this.overrideLinks();
         if (modules[moduleName].css) injectCss.replaceArr(modules[moduleName].css);
         else injectCss.flush();
         const js = modules[moduleName].js;
-        js();
+        js.main();
     }
 
     async loadJs(url) {
         try {
-            return (await import(url)).default;
+            return (await import(url));
         }
         catch (err) {
             console.log('error:', err);

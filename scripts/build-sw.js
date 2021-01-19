@@ -3,6 +3,7 @@ const config = require('../config/workbox-config.js');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
+const URL = require('url').URL;
 
 async function replaceInstallSW() {
     const filepath = path.join(__dirname, '../dist/scripts/install-sw.js');

@@ -26,4 +26,4 @@ async function main() {
     const battle = new Battle();
 }
 
-export default main;
+export { main };

@@ -4,9 +4,7 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
 
-function compile_hbs(content, title) {
-    const contentEl = document.querySelector('#content');
-    const staticTextEl = document.querySelector('#static-text');
+function compile_hbs(content) {
     const languages = localConfig.get('languages');
     const chosenLanguage = localConfig.get('chosenLanguage');
     const options = {
@@ -14,9 +12,7 @@ function compile_hbs(content, title) {
         languages,
         chosenLanguage
     };
-    contentEl.innerHTML = Handlebars.compile(content)(options);
-    staticTextEl.style.display = 'none';
-    contentEl.style.display = 'block';
+    return Handlebars.compile(content)(options);
 }
 
 export default compile_hbs;
