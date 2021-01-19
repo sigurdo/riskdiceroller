@@ -9,11 +9,12 @@ class Battle {
     addEventListeners() {
         const buttonsAttacker = document.querySelectorAll('#angrepDiv>div>.justerAntall>div');
         for (let i = 0; i < buttonsAttacker.length; i++) {
-            buttonsAttacker[i].addEventListener('click', () => generalFunctions.juster(0, Number(buttonsAttacker[i].innerHTML), false));
+            // $(buttonsAttacker[i]).bind('tap', () => generalFunctions.juster(0, Number(buttonsAttacker[i].innerHTML), false));
+            buttonsAttacker[i].addEventListener('touchend', () => generalFunctions.juster(0, Number(buttonsAttacker[i].innerHTML), false));
         }
         const buttonsDefender = document.querySelectorAll('#forsvarDiv>div>.justerAntall>div');
         for (let i = 0; i < buttonsDefender.length; i++) {
-            buttonsDefender[i].addEventListener('click', () => generalFunctions.juster(1, Number(buttonsDefender[i].innerHTML), false));
+            buttonsDefender[i].addEventListener('touchend', () => generalFunctions.juster(1, Number(buttonsDefender[i].innerHTML), false));
         }
         document.querySelector('#angrip').addEventListener('click', () => generalFunctions.angrip());
         document.querySelector('#blitz').addEventListener('click', () => generalFunctions.sporBlitz());

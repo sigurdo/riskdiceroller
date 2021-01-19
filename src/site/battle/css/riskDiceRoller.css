@@ -59,7 +59,8 @@ html, body {
     background-color: #048a77;
     background-color: #26A69A;
     cursor: pointer;
-    touch-action: zoom;
+    touch-action: none;
+    user-select: none;
 }
 
 .vis {
@@ -133,6 +134,7 @@ input::-webkit-inner-spin-button {*/
     color: white;
     text-align: center;
     padding: 15px 44px 15px 44px;
+    user-select: none;
 }
 
 #angripRamme {
@@ -155,6 +157,7 @@ input::-webkit-inner-spin-button {*/
     color: white;
     text-align: center;
     padding: 8px 24px 8px 24px;
+    user-select: none;
 }
 
 #blitzRamme {
@@ -176,6 +179,7 @@ input::-webkit-inner-spin-button {*/
     color: white;
     text-align: center;
     padding: 8px 22px 8px 22px;
+    user-select: none;
 }
 
 #fullscreenIcon {
