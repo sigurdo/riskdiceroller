@@ -1,3 +1,10 @@
+* {
+	/* Make all text unselectable */
+	-webkit-user-select: none !important;
+	-moz-user-select: none !important;
+	user-select: none !important;
+}
+
 html, body {
 	margin: 0px;
 	height: 100%;/*Tillater høydeflexing*/
