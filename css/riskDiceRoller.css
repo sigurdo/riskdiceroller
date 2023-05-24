@@ -55,7 +55,7 @@ html, body {
 	height: 100%;
 }
 
-.justerAntall div {
+.justerAntall > div {
 	font-size: 110%;
 	font-weight: bold;
 	font-family: calibri;
@@ -67,6 +67,11 @@ html, body {
 	background-color: #26A69A;
 	cursor: pointer;
 	touch-action: zoom;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.justerAntall > div:active {
+	background-color: #1f8076;
 }
 
 .vis {
@@ -162,6 +167,11 @@ input::-webkit-inner-spin-button {*/
 	color: white;
 	text-align: center;
 	padding: 8px 24px 8px 24px;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#angrip:active {
+	background-color: #222;
 }
 
 #blitzRamme {
@@ -183,6 +193,11 @@ input::-webkit-inner-spin-button {*/
 	color: white;
 	text-align: center;
 	padding: 8px 22px 8px 22px;
+}
+
+#blitz:active, #blitzPromptBlitzButton:active {
+	-webkit-tap-highlight-color: transparent;
+	background-color: #d4491f !important;
 }
 
 #fullscreenIcon {

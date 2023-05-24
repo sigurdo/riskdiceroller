@@ -282,6 +282,7 @@ function sporBlitz() {
 	blitzKnapp.style.border = 'none';
 	blitzKnapp.style.cursor = 'pointer';
 	blitzKnapp.innerHTML = 'Blitz';
+	blitzKnapp.id = "blitzPromptBlitzButton"
 	blitzKnapp.addEventListener('click', function () {
 		var minAngripere = Number(document.querySelector('#minAngripere').value);
 		var ventetid = ventetidAlternativer[Number(document.querySelector('#ventetid').value)].ms;
